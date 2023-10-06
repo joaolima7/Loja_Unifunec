@@ -52,6 +52,22 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Acesso.cs" />
+    <Compile Include="Model\Bairro.cs" />
+    <Compile Include="Model\Cep.cs" />
+    <Compile Include="Model\Cidade.cs" />
+    <Compile Include="Model\Funcao.cs" />
+    <Compile Include="Model\I_CRUD.cs" />
+    <Compile Include="Model\Loja.cs" />
+    <Compile Include="Model\Marca.cs" />
+    <Compile Include="Model\Operadora.cs" />
+    <Compile Include="Model\Rua.cs" />
+    <Compile Include="Model\Sexo.cs" />
+    <Compile Include="Model\Situacao.cs" />
+    <Compile Include="Model\Telefone.cs" />
+    <Compile Include="Model\Tipo.cs" />
+    <Compile Include="Model\Trabalho.cs" />
+    <Compile Include="Model\Uf.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -78,6 +94,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
