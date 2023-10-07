@@ -8,5 +8,8 @@ namespace Loja_Unifunec.Model
 {
     internal class Funcao
     {
+        public int Codfuncao { get; set; }
+        public string Nomefuncao { get; set; }
+
     }
 }

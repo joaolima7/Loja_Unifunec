@@ -8,5 +8,8 @@ namespace Loja_Unifunec.Model
 {
     internal class Operadora
     {
+        public int Codoperadora { get; set; }
+        public string Nomeoperadora { get; set; }
+
     }
 }

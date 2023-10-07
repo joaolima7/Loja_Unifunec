@@ -56,7 +56,10 @@
     <Compile Include="Model\Bairro.cs" />
     <Compile Include="Model\Cep.cs" />
     <Compile Include="Model\Cidade.cs" />
+    <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Fornecedor.cs" />
     <Compile Include="Model\Funcao.cs" />
+    <Compile Include="Model\Funcionario.cs" />
     <Compile Include="Model\I_CRUD.cs" />
     <Compile Include="Model\Loja.cs" />
     <Compile Include="Model\Marca.cs" />

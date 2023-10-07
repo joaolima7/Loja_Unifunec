@@ -8,5 +8,8 @@ namespace Loja_Unifunec.Model
 {
     internal class Cep
     {
+        public int Codcep { get; set; }
+        public string Numerocep { get; set; }
+
     }
 }
