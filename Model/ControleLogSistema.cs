@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Loja_Unifunec.Model
 {
-    internal class Imagens
+    internal class ControleLogSistema
     {
-        public int Codimagens { get; set; }
-        public byte[] Imagem { get; set; }
+        public int Codcontrole { get; set; }
+        public Login Login { get; set; }
         public string Descricao { get; set; }
-        public Produto Produto { get; set; }
+        public string Datalog { get; set; }
+        public string Horalog { get; set; }
 
-        
     }
 }
