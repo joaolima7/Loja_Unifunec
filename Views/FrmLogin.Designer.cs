@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tb_login = new System.Windows.Forms.TextBox();
@@ -67,6 +68,9 @@
             this.tb_login.Name = "tb_login";
             this.tb_login.Size = new System.Drawing.Size(191, 22);
             this.tb_login.TabIndex = 5;
+            this.tb_login.Text = "JC";
+            this.tb_login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_login_KeyDown);
+            this.tb_login.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_login_KeyPress);
             // 
             // tb_senha
             // 
@@ -76,6 +80,7 @@
             this.tb_senha.PasswordChar = '*';
             this.tb_senha.Size = new System.Drawing.Size(191, 22);
             this.tb_senha.TabIndex = 6;
+            this.tb_senha.Text = "123";
             // 
             // pictureBox1
             // 
@@ -152,7 +157,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

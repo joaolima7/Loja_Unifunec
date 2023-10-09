@@ -1,4 +1,5 @@
 ﻿using Loja_Unifunec.Conection;
+using Loja_Unifunec.Views;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Loja_Unifunec.Controller
 {
     internal class C_Login
     {
+
         SqlConnection con;
         SqlCommand cmd;
 
@@ -35,7 +37,8 @@ namespace Loja_Unifunec.Controller
                 if (reader.HasRows)
                 {
                     reader.Close();
-                    MessageBox.Show("Sucesso!");
+                    Frm_TelaPrincipal tela = new Frm_TelaPrincipal();
+                    tela.Show();
                 }
                 else
                 {

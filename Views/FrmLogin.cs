@@ -32,6 +32,7 @@ namespace Loja_Unifunec
         {
             C_Login login = new C_Login();
             login.buscarLogin(tb_login.Text, tb_senha.Text);
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -69,6 +70,19 @@ namespace Loja_Unifunec
             {
                 tb_senha.PasswordChar = '*';
             }
+        }
+
+        private void tb_login_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLower(e.KeyChar))
+            {
+                e.KeyChar = char.ToUpper(e.KeyChar);
+            }
+        }
+
+        private void tb_login_KeyDown(object sender, KeyEventArgs e)
+        {
+            
         }
     }
 }
