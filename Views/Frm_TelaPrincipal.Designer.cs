@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_TelaPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acessosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bairrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cEPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.acessosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lojaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.marcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operadorasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,6 +87,12 @@
             this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
             this.configuraçõesToolStripMenuItem.Text = "Configurações";
             // 
+            // acessosToolStripMenuItem
+            // 
+            this.acessosToolStripMenuItem.Name = "acessosToolStripMenuItem";
+            this.acessosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.acessosToolStripMenuItem.Text = "Acessos";
+            // 
             // bairrosToolStripMenuItem
             // 
             this.bairrosToolStripMenuItem.Name = "bairrosToolStripMenuItem";
@@ -122,12 +128,6 @@
             this.funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
             this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.funcionáriosToolStripMenuItem.Text = "Funcionários";
-            // 
-            // acessosToolStripMenuItem
-            // 
-            this.acessosToolStripMenuItem.Name = "acessosToolStripMenuItem";
-            this.acessosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.acessosToolStripMenuItem.Text = "Acessos";
             // 
             // lojaToolStripMenuItem
             // 
@@ -188,6 +188,7 @@
             this.vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
             this.vendaToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.vendaToolStripMenuItem.Text = "Vendas";
+            this.vendaToolStripMenuItem.Click += new System.EventHandler(this.vendaToolStripMenuItem_Click);
             // 
             // comprasToolStripMenuItem
             // 
@@ -209,6 +210,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOJA UNIFUNEC";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_TelaPrincipal_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
