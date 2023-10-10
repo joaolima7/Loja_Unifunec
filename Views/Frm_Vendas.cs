@@ -21,5 +21,10 @@ namespace Loja_Unifunec.Views
         {
 
         }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
