@@ -1,23 +1,50 @@
-﻿using System;
+﻿using Loja_Unifunec.Conection;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Loja_Unifunec.Controller
 {
     internal class C_Cliente
     {
 
-        SqlConnection con; 
+        SqlConnection con;
         SqlCommand cmd;
+        DataTable dataTableClientes;
+        string sqlCarregarClientes = "select * from cliente";
 
         public DataTable carregarClientes()
         {
-            DataTable clientes = new DataTable();
-            return clientes;
+            Conexao conexao = new Conexao();
+            con = conexao.conectaSQL();
+            dataTableClientes = new DataTable();
+
+            cmd = new SqlCommand(sqlCarregarClientes, con);
+            cmd.CommandType = CommandType.Text;
+
+            con.Open();
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dataTableClientes); // Carregar dados diretamente no DataTable
+                return dataTableClientes;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return dataTableClientes;
         }
     }
 }

@@ -37,5 +37,77 @@ namespace Loja_Unifunec.Views
                 dialogCriarVenda.ShowDialog();
             }
         }
+
+        private void button1_EnabledChanged(object sender, EventArgs e)
+        {
+            if (button1.Enabled)
+            {
+                button1.Cursor = Cursors.Hand;
+            }
+            else
+            {
+                button1.Cursor = Cursors.Default;
+            }
+        }
+
+        private void button2_EnabledChanged(object sender, EventArgs e)
+        {
+            if (button2.Enabled)
+            {
+                button2.Cursor = Cursors.Hand;
+            }
+            else
+            {
+                button2.Cursor = Cursors.Default;
+            }
+        }
+
+        private void button3_EnabledChanged(object sender, EventArgs e)
+        {
+            if (button3.Enabled)
+            {
+                button3.Cursor = Cursors.Hand;
+            }
+            else
+            {
+                button3.Cursor = Cursors.Default;
+            }
+        }
+
+        private void button4_EnabledChanged(object sender, EventArgs e)
+        {
+            if (button4.Enabled)
+            {
+                button4.Cursor = Cursors.Hand;
+            }
+            else
+            {
+                button4.Cursor = Cursors.Default;
+            }
+        }
+
+        private void button5_EnabledChanged(object sender, EventArgs e)
+        {
+            if (button5.Enabled)
+            {
+                button5.Cursor = Cursors.Hand;
+            }
+            else
+            {
+                button5.Cursor = Cursors.Default;
+            }
+        }
+
+        private void button6_EnabledChanged(object sender, EventArgs e)
+        {
+            if (button6.Enabled)
+            {
+                button6.Cursor = Cursors.Hand;
+            }
+            else
+            {
+                button6.Cursor = Cursors.Default;
+            }
+        }
     }
 }

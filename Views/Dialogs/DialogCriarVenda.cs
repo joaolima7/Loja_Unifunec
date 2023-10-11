@@ -32,7 +32,7 @@ namespace Loja_Unifunec.Views.Dialogs
         private void Txb_nomecliente_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F2)
-            {
+            {       
                 DialogExibirClientes dialogExibirClientes = new DialogExibirClientes();
                 dialogExibirClientes.ShowDialog();
             }
