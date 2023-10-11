@@ -15,7 +15,7 @@ namespace Loja_Unifunec.Views.Dialogs
 {
     public partial class DialogExibirClientes : Form
     {
-
+        C_Cliente c_Cliente = new C_Cliente();
 
         public DialogExibirClientes()
         {
@@ -24,7 +24,7 @@ namespace Loja_Unifunec.Views.Dialogs
 
         private void DialogExibirClientes_Load(object sender, EventArgs e)
         {
-            C_Cliente c_Cliente = new C_Cliente();
+            
             DataTable tb = new DataTable();
             tb = c_Cliente.carregarClientes();
             if (tb.Rows.Count >0)
@@ -35,6 +35,13 @@ namespace Loja_Unifunec.Views.Dialogs
             {
 
             }
+        }
+
+        private void Txb_nomecliente_TextChanged(object sender, EventArgs e)
+        {
+            string pesquisa = Txb_nomecliente.Text;
+
+            dataGridView1.DataSource = c_Cliente.pesquisaRealTime(pesquisa);
         }
     }
 }
