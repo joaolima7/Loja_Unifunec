@@ -47,7 +47,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conection\Conexao.cs" />
+    <Compile Include="Controller\C_Cliente.cs" />
     <Compile Include="Controller\C_Login.cs" />
+    <Compile Include="Controller\C_Vendas.cs" />
+    <Compile Include="Views\Dialogs\DialogCriarVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Dialogs\DialogCriarVenda.Designer.cs">
+      <DependentUpon>DialogCriarVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\DialogExibirClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Dialogs\DialogExibirClientes.Designer.cs">
+      <DependentUpon>DialogExibirClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +117,12 @@
     <Compile Include="Views\Frm_Vendas.Designer.cs">
       <DependentUpon>Frm_Vendas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Dialogs\DialogCriarVenda.resx">
+      <DependentUpon>DialogCriarVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dialogs\DialogExibirClientes.resx">
+      <DependentUpon>DialogExibirClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,12 +155,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\imprimir.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logoU-azul.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\unifunec-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imprimir %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
