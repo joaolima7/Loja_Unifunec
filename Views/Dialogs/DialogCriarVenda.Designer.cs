@@ -75,7 +75,6 @@
             // 
             // button3
             // 
-            this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(206, 141);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(95, 30);
@@ -88,7 +87,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(76, 59);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(123, 17);
             this.checkBox1.TabIndex = 15;
@@ -107,22 +106,22 @@
             this.Controls.Add(this.Txb_nomecliente);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DialogCriarVenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Venda";
+            this.Load += new System.EventHandler(this.DialogCriarVenda_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox Txb_nomecliente;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox Txb_noemfunc;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.CheckBox checkBox1;
+        public System.Windows.Forms.TextBox Txb_nomecliente;
+        public System.Windows.Forms.TextBox Txb_noemfunc;
     }
 }

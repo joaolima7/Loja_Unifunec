@@ -90,91 +90,91 @@
             // acessosToolStripMenuItem
             // 
             this.acessosToolStripMenuItem.Name = "acessosToolStripMenuItem";
-            this.acessosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.acessosToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.acessosToolStripMenuItem.Text = "Acessos";
             // 
             // bairrosToolStripMenuItem
             // 
             this.bairrosToolStripMenuItem.Name = "bairrosToolStripMenuItem";
-            this.bairrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bairrosToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.bairrosToolStripMenuItem.Text = "Bairros";
             // 
             // cEPToolStripMenuItem
             // 
             this.cEPToolStripMenuItem.Name = "cEPToolStripMenuItem";
-            this.cEPToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cEPToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.cEPToolStripMenuItem.Text = "CEP";
             // 
             // cidadesToolStripMenuItem
             // 
             this.cidadesToolStripMenuItem.Name = "cidadesToolStripMenuItem";
-            this.cidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cidadesToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.cidadesToolStripMenuItem.Text = "Cidades";
             // 
             // fornecedoresToolStripMenuItem
             // 
             this.fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
-            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.fornecedoresToolStripMenuItem.Text = "Fornecedores";
             // 
             // funçõesToolStripMenuItem
             // 
             this.funçõesToolStripMenuItem.Name = "funçõesToolStripMenuItem";
-            this.funçõesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.funçõesToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.funçõesToolStripMenuItem.Text = "Funções";
             // 
             // funcionáriosToolStripMenuItem
             // 
             this.funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
-            this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.funcionáriosToolStripMenuItem.Text = "Funcionários";
             // 
             // lojaToolStripMenuItem
             // 
             this.lojaToolStripMenuItem.Name = "lojaToolStripMenuItem";
-            this.lojaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lojaToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.lojaToolStripMenuItem.Text = "Lojas";
             // 
             // marcasToolStripMenuItem
             // 
             this.marcasToolStripMenuItem.Name = "marcasToolStripMenuItem";
-            this.marcasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.marcasToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.marcasToolStripMenuItem.Text = "Marcas";
             // 
             // operadorasToolStripMenuItem
             // 
             this.operadorasToolStripMenuItem.Name = "operadorasToolStripMenuItem";
-            this.operadorasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.operadorasToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.operadorasToolStripMenuItem.Text = "Operadoras";
             // 
             // ruasToolStripMenuItem
             // 
             this.ruasToolStripMenuItem.Name = "ruasToolStripMenuItem";
-            this.ruasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ruasToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.ruasToolStripMenuItem.Text = "Ruas ";
             // 
             // telefonesToolStripMenuItem
             // 
             this.telefonesToolStripMenuItem.Name = "telefonesToolStripMenuItem";
-            this.telefonesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.telefonesToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.telefonesToolStripMenuItem.Text = "Telefones";
             // 
             // tiposToolStripMenuItem
             // 
             this.tiposToolStripMenuItem.Name = "tiposToolStripMenuItem";
-            this.tiposToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tiposToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.tiposToolStripMenuItem.Text = "Tipos";
             // 
             // tRabalhoToolStripMenuItem
             // 
             this.tRabalhoToolStripMenuItem.Name = "tRabalhoToolStripMenuItem";
-            this.tRabalhoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tRabalhoToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.tRabalhoToolStripMenuItem.Text = "Trabalho";
             // 
             // uFToolStripMenuItem
             // 
             this.uFToolStripMenuItem.Name = "uFToolStripMenuItem";
-            this.uFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.uFToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.uFToolStripMenuItem.Text = "UF";
             // 
             // produtosToolStripMenuItem
@@ -211,6 +211,7 @@
             this.Text = "LOJA UNIFUNEC";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_TelaPrincipal_FormClosing);
+            this.Load += new System.EventHandler(this.Frm_TelaPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -1,5 +1,6 @@
 ﻿using Loja_Unifunec.Conection;
 using Loja_Unifunec.Controller;
+using Loja_Unifunec.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,10 +17,12 @@ namespace Loja_Unifunec.Views.Dialogs
     public partial class DialogExibirClientes : Form
     {
         C_Cliente c_Cliente = new C_Cliente();
+        private DialogCriarVenda dCV;
 
-        public DialogExibirClientes()
+        public DialogExibirClientes(DialogCriarVenda dCV)
         {
             InitializeComponent();
+            this.dCV = dCV;
         }
 
         private void DialogExibirClientes_Load(object sender, EventArgs e)
@@ -42,6 +45,28 @@ namespace Loja_Unifunec.Views.Dialogs
             string pesquisa = Txb_nomecliente.Text;
 
             dataGridView1.DataSource = c_Cliente.pesquisaRealTime(pesquisa);
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+
+                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+                // Obtém o valor da coluna "CODIGO" da linha selecionada
+                var codigoValue = selectedRow.Cells["CÓDIGO"].Value.ToString();
+                var nomeValue = selectedRow.Cells["CLIENTE"].Value.ToString();
+                dCV.adicionarCliente(nomeValue, codigoValue);
+                this.Close();
+            }
+        }
+
+        private void DialogExibirClientes_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DialogCriarVenda dialogCriarVenda = new DialogCriarVenda();
+            Cliente cliente = new Cliente();
+            Txb_nomecliente.Text = cliente.Nomecliente;
+            
         }
     }
 }

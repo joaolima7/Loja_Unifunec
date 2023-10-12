@@ -43,5 +43,10 @@ namespace Loja_Unifunec.Views
                 }
             }
         }
+
+        private void Frm_TelaPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
