@@ -18,6 +18,7 @@ namespace Loja_Unifunec.Controller
         SqlCommand cmd;
 
         string sqlBuscarLogin = "select * from login where usuario = @User and senha = @Password";
+        string sqlBuscarFunc = "select * from funcionario where codfuncionario = @codfunc";
 
         public void buscarLogin(string usuario, string senha)
         {
@@ -36,8 +37,11 @@ namespace Loja_Unifunec.Controller
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
+                    reader.Read();
+                    string codfunc = reader["codfuncionario_fk"].ToString();
+                    string nomeuser = reader["usuario"].ToString();
+                    Frm_TelaPrincipal tela = new Frm_TelaPrincipal(nomeuser, codfunc);
                     reader.Close();
-                    Frm_TelaPrincipal tela = new Frm_TelaPrincipal();
                     tela.Show();
                 }
                 else

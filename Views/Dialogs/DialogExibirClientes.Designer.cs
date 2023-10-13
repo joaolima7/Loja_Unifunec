@@ -45,7 +45,9 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(2, 71);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -61,6 +63,8 @@
             this.Txb_nomecliente.Size = new System.Drawing.Size(472, 20);
             this.Txb_nomecliente.TabIndex = 13;
             this.Txb_nomecliente.TextChanged += new System.EventHandler(this.Txb_nomecliente_TextChanged);
+            this.Txb_nomecliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txb_nomecliente_KeyDown);
+            this.Txb_nomecliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txb_nomecliente_KeyPress);
             // 
             // label2
             // 

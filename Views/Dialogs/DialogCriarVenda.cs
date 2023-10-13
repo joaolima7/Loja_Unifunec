@@ -14,12 +14,18 @@ namespace Loja_Unifunec.Views.Dialogs
 {
     public partial class DialogCriarVenda : Form
     {
+        private bool fecharForm = false;
         string codcliente;
-        public DialogCriarVenda()
+        string nomefunc;
+        string codfunc;
+        public DialogCriarVenda(string nomefunc, string codfunc)
         {
             InitializeComponent();
             Txb_nomecliente.ReadOnly = true;
             Txb_noemfunc.ReadOnly = true;
+            this.nomefunc = nomefunc;
+            this.codfunc = codfunc;
+            Txb_noemfunc.Text = nomefunc;
         }
 
         public void adicionarCliente(string nomecliente, string codcliente)
@@ -29,8 +35,15 @@ namespace Loja_Unifunec.Views.Dialogs
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            //C_Vendas vendas = new C_Vendas();
-            //vendas.criarVenda(Txb_nomecliente.Text, Txb_noemfunc.Text);
+            if (Txb_nomecliente.Text.Length >0)
+            {
+                //C_Vendas vendas = new C_Vendas();
+                //vendas.criarVenda(Txb_nomecliente.Text, Txb_noemfunc.Text);
+            }
+            else if(Txb_nomecliente.Text == "")
+            {
+                MessageBox.Show("Selecione o Cliente para prosseguir!","ATENÇÃO",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
         }
 
         private void Txb_nomecliente_KeyPress(object sender, KeyPressEventArgs e)
@@ -41,15 +54,49 @@ namespace Loja_Unifunec.Views.Dialogs
         private void Txb_nomecliente_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F2)
-            {       
-                DialogExibirClientes dialogExibirClientes = new DialogExibirClientes(this);
-                dialogExibirClientes.ShowDialog();
+            {
+                if (!checkBox1.Checked)
+                {
+                    DialogExibirClientes dialogExibirClientes = new DialogExibirClientes(this);
+                    dialogExibirClientes.ShowDialog();
+                }
             }
         }
 
         private void DialogCriarVenda_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                codcliente = "4";
+                Txb_nomecliente.Text = "CONSUMIDOR";
+            }
+            else
+            {
+                codcliente = null;
+                Txb_nomecliente.Text = "";
+            }
+        }
+
+        private void DialogCriarVenda_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!fecharForm)
+            {
+                DialogResult result = MessageBox.Show("Deseja abandonar Venda?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    fecharForm = true;
+                    this.Close();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

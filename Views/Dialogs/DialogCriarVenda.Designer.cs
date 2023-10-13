@@ -75,7 +75,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(206, 141);
+            this.button3.Location = new System.Drawing.Point(216, 149);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(95, 30);
             this.button3.TabIndex = 14;
@@ -93,6 +93,7 @@
             this.checkBox1.TabIndex = 15;
             this.checkBox1.Text = "Não possui cadastro";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // DialogCriarVenda
             // 
@@ -110,6 +111,7 @@
             this.Name = "DialogCriarVenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Venda";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DialogCriarVenda_FormClosing);
             this.Load += new System.EventHandler(this.DialogCriarVenda_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -63,10 +63,17 @@ namespace Loja_Unifunec.Views.Dialogs
 
         private void DialogExibirClientes_FormClosed(object sender, FormClosedEventArgs e)
         {
-            DialogCriarVenda dialogCriarVenda = new DialogCriarVenda();
-            Cliente cliente = new Cliente();
-            Txb_nomecliente.Text = cliente.Nomecliente;
             
+        }
+
+        private void Txb_nomecliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void Txb_nomecliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = char.ToUpper(e.KeyChar);
         }
     }
 }

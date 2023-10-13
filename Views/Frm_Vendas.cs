@@ -13,9 +13,13 @@ namespace Loja_Unifunec.Views
 {
     public partial class Frm_Vendas : Form
     {
-        public Frm_Vendas()
+        public string usuario;
+        public string codfunc;
+        public Frm_Vendas(string func, string codfunc)
         {
             InitializeComponent();
+            this.usuario = func;
+            this.codfunc = codfunc;
         }
 
         private void Frm_Vendas_Load(object sender, EventArgs e)
@@ -33,7 +37,8 @@ namespace Loja_Unifunec.Views
             DialogResult result = MessageBox.Show("Deseja iniciar uma Venda?","VENDAS",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-               DialogCriarVenda dialogCriarVenda = new DialogCriarVenda();
+               
+               DialogCriarVenda dialogCriarVenda = new DialogCriarVenda(usuario,codfunc);
                 dialogCriarVenda.ShowDialog();
             }
         }

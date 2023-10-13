@@ -68,7 +68,7 @@
             this.tb_login.Name = "tb_login";
             this.tb_login.Size = new System.Drawing.Size(191, 22);
             this.tb_login.TabIndex = 5;
-            this.tb_login.Text = "JC";
+            this.tb_login.Text = "ADMIN";
             this.tb_login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_login_KeyDown);
             this.tb_login.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_login_KeyPress);
             // 

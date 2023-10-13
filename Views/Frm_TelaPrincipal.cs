@@ -14,14 +14,19 @@ namespace Loja_Unifunec.Views
     {
 
         bool closeForm = false;
-        public Frm_TelaPrincipal()
+        public string usuario;
+        public string codfunc;
+        public Frm_TelaPrincipal(string user, string coduser)
         {
             InitializeComponent();
+            this.usuario = user;
+            this.codfunc = coduser;
+            label1.Text = usuario;
         }
 
         private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_Vendas vendas = new Frm_Vendas();
+            Frm_Vendas vendas = new Frm_Vendas(usuario,codfunc);
             vendas.MdiParent = this;
             vendas.Show();
         }
