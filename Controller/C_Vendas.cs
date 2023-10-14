@@ -54,6 +54,11 @@ namespace Loja_Unifunec.Controller
 
         }
 
+        public void insereProdutoVenda(string codvenda, string codproduto, string quantidade, string valor)
+        {
+
+        }
+
     }
 
 }

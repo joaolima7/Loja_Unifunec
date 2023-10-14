@@ -40,6 +40,10 @@ namespace Loja_Unifunec.Views
             textBox2.Text = this.nomefunc;
             textBox3.Enabled = true;
             textBox4.Enabled = true;
+            button3.Enabled = true;
+            button5.Enabled = true;
+            btn_imprimir.Enabled = true;
+            label8.Text = "";
         }
 
 
@@ -126,13 +130,29 @@ namespace Loja_Unifunec.Views
 
         private void button6_EnabledChanged(object sender, EventArgs e)
         {
-            if (button6.Enabled)
+            if (btn_imprimir.Enabled)
             {
-                button6.Cursor = Cursors.Hand;
+                btn_imprimir.Cursor = Cursors.Hand;
             }
             else
             {
-                button6.Cursor = Cursors.Default;
+                btn_imprimir.Cursor = Cursors.Default;
+            }
+        }
+
+        private void textBox3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                textBox4.Focus();
+            }
+        }
+
+        private void textBox4_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (textBox3.Text != "" && textBox4.Text != "")
+            {
+                
             }
         }
     }

@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Vendas));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btn_imprimir = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -69,7 +69,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.btn_imprimir);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
@@ -80,16 +80,16 @@
             this.panel1.Size = new System.Drawing.Size(634, 42);
             this.panel1.TabIndex = 0;
             // 
-            // button6
+            // btn_imprimir
             // 
-            this.button6.Enabled = false;
-            this.button6.Image = global::Loja_Unifunec.Properties.Resources.imprimir__1_;
-            this.button6.Location = new System.Drawing.Point(571, 4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(45, 32);
-            this.button6.TabIndex = 3;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.EnabledChanged += new System.EventHandler(this.button6_EnabledChanged);
+            this.btn_imprimir.Enabled = false;
+            this.btn_imprimir.Image = global::Loja_Unifunec.Properties.Resources.imprimir__1_;
+            this.btn_imprimir.Location = new System.Drawing.Point(571, 4);
+            this.btn_imprimir.Name = "btn_imprimir";
+            this.btn_imprimir.Size = new System.Drawing.Size(45, 32);
+            this.btn_imprimir.TabIndex = 3;
+            this.btn_imprimir.UseVisualStyleBackColor = true;
+            this.btn_imprimir.EnabledChanged += new System.EventHandler(this.button6_EnabledChanged);
             // 
             // button5
             // 
@@ -151,12 +151,20 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkGray;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(7, 144);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.ShowCellErrors = false;
+            this.dataGridView1.ShowRowErrors = false;
             this.dataGridView1.Size = new System.Drawing.Size(617, 402);
             this.dataGridView1.TabIndex = 1;
             // 
@@ -318,6 +326,7 @@
             this.textBox3.Size = new System.Drawing.Size(277, 20);
             this.textBox3.TabIndex = 11;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox3_KeyDown);
             // 
             // textBox4
             // 
@@ -326,6 +335,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(57, 20);
             this.textBox4.TabIndex = 12;
+            this.textBox4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox4_KeyDown);
             // 
             // panel5
             // 
@@ -410,6 +420,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_imprimir;
     }
 }
