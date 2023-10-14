@@ -75,5 +75,22 @@ namespace Loja_Unifunec.Views.Dialogs
         {
             e.KeyChar = char.ToUpper(e.KeyChar);
         }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                DataGridView dataGridView = (DataGridView)sender; // Obtém o DataGridView atual
+                if (dataGridView.CurrentRow != null)
+                {
+                    DataGridViewRow selectedRow = dataGridView.CurrentRow;
+                    // Obtém o valor da coluna "CÓDIGO" da linha selecionada
+                    var codigoValue = selectedRow.Cells["CÓDIGO"].Value.ToString();
+                    var nomeValue = selectedRow.Cells["CLIENTE"].Value.ToString();
+                    dCV.adicionarCliente(nomeValue, codigoValue);
+                    this.Close();
+                }
+            }
+        }
     }
 }

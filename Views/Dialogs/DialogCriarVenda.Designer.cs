@@ -35,13 +35,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Txb_nomecliente
             // 
-            this.Txb_nomecliente.Location = new System.Drawing.Point(76, 36);
+            this.Txb_nomecliente.Location = new System.Drawing.Point(83, 36);
             this.Txb_nomecliente.Name = "Txb_nomecliente";
-            this.Txb_nomecliente.Size = new System.Drawing.Size(408, 20);
+            this.Txb_nomecliente.Size = new System.Drawing.Size(371, 20);
             this.Txb_nomecliente.TabIndex = 11;
             this.Txb_nomecliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txb_nomecliente_KeyDown);
             this.Txb_nomecliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txb_nomecliente_KeyPress);
@@ -95,11 +96,23 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(456, 33);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 27);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "+";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // DialogCriarVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 191);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.Txb_noemfunc);
@@ -125,5 +138,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         public System.Windows.Forms.TextBox Txb_nomecliente;
         public System.Windows.Forms.TextBox Txb_noemfunc;
+        private System.Windows.Forms.Button button1;
     }
 }

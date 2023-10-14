@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Loja_Unifunec.Controller
 {
@@ -18,8 +19,9 @@ namespace Loja_Unifunec.Controller
 
         string sqlCriarVenda = "insert into venda(datavenda, codcliente_fk, codfuncionario_fk) values (getdate(), @codcliente, @codfunc)";
 
-        public void criarVenda(string codcliente, string codfuncionario)
+        public int criarVenda(string codcliente, string codfuncionario)
         {
+            int codvenda = -1;
             string func = codfuncionario;
             string cliente = codcliente;
             con = cn.conectaSQL();
@@ -28,7 +30,27 @@ namespace Loja_Unifunec.Controller
             cmd.Parameters.AddWithValue("@codfunc",codfuncionario);
             cmd.CommandType = CommandType.Text;
 
+            con.Open();
 
+            try
+            {
+                cmd.ExecuteNonQuery();
+
+                cmd.CommandText = "SELECT MAX(codvenda) FROM venda";
+                codvenda = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return codvenda;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return codvenda;
 
         }
 

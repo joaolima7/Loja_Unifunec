@@ -15,12 +15,33 @@ namespace Loja_Unifunec.Views
     {
         public string usuario;
         public string codfunc;
+        public string codvenda;
+        public string datavenda;
+        public string nomecliente;
+        public string nomefunc;
         public Frm_Vendas(string func, string codfunc)
         {
             InitializeComponent();
             this.usuario = func;
             this.codfunc = codfunc;
         }
+
+
+        public void vendaCriada(string codvenda, string cliente, string func)
+        {
+            this.codvenda = codvenda;
+            this.nomecliente = cliente;
+            this.nomefunc = func;
+            this.datavenda = DateTime.Now.ToString("dd/MM/yyyy");
+
+            lbl_codVenda.Text = this.codvenda;
+            lbl_dataVenda.Text = this.datavenda;
+            textBox1.Text = this.nomecliente;
+            textBox2.Text = this.nomefunc;
+            textBox3.Enabled = true;
+            textBox4.Enabled = true;
+        }
+
 
         private void Frm_Vendas_Load(object sender, EventArgs e)
         {
@@ -38,7 +59,7 @@ namespace Loja_Unifunec.Views
             if (result == DialogResult.Yes)
             {
                
-               DialogCriarVenda dialogCriarVenda = new DialogCriarVenda(usuario,codfunc);
+               DialogCriarVenda dialogCriarVenda = new DialogCriarVenda(usuario,codfunc,this);
                 dialogCriarVenda.ShowDialog();
             }
         }

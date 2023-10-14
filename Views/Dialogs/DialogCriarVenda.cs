@@ -14,11 +14,12 @@ namespace Loja_Unifunec.Views.Dialogs
 {
     public partial class DialogCriarVenda : Form
     {
+        private Frm_Vendas frm_venda;
         private bool fecharForm = false;
         string codcliente;
         string nomefunc;
         string codfunc;
-        public DialogCriarVenda(string nomefunc, string codfunc)
+        public DialogCriarVenda(string nomefunc, string codfunc,Frm_Vendas vendas)
         {
             InitializeComponent();
             Txb_nomecliente.ReadOnly = true;
@@ -26,6 +27,7 @@ namespace Loja_Unifunec.Views.Dialogs
             this.nomefunc = nomefunc;
             this.codfunc = codfunc;
             Txb_noemfunc.Text = nomefunc;
+            frm_venda = vendas;
         }
 
         public void adicionarCliente(string nomecliente, string codcliente)
@@ -37,8 +39,11 @@ namespace Loja_Unifunec.Views.Dialogs
         {
             if (Txb_nomecliente.Text.Length >0)
             {
-                //C_Vendas vendas = new C_Vendas();
-                //vendas.criarVenda(Txb_nomecliente.Text, Txb_noemfunc.Text);
+                C_Vendas vendas = new C_Vendas();
+                int codvenda =vendas.criarVenda(codcliente, codfunc);
+                frm_venda.vendaCriada(codvenda.ToString(),Txb_nomecliente.Text,Txb_noemfunc.Text);
+                fecharForm = true;
+                this.Close();
             }
             else if(Txb_nomecliente.Text == "")
             {
@@ -97,6 +102,11 @@ namespace Loja_Unifunec.Views.Dialogs
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
