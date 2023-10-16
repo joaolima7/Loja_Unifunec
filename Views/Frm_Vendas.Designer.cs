@@ -381,6 +381,7 @@
             this.Name = "Frm_Vendas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vendas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Vendas_FormClosing);
             this.Load += new System.EventHandler(this.Frm_Vendas_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

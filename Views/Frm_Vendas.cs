@@ -1,4 +1,5 @@
-﻿using Loja_Unifunec.Views.Dialogs;
+﻿using Loja_Unifunec.Controller;
+using Loja_Unifunec.Views.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,14 +12,20 @@ using System.Windows.Forms;
 
 namespace Loja_Unifunec.Views
 {
+   
     public partial class Frm_Vendas : Form
     {
+        bool fechaForm = false;
         public string usuario;
         public string codfunc;
         public string codvenda;
+        public string codprod;
+        public string valorprod;
         public string datavenda;
         public string nomecliente;
         public string nomefunc;
+
+        C_Vendas c_Vendas = new C_Vendas();
         public Frm_Vendas(string func, string codfunc)
         {
             InitializeComponent();
@@ -150,9 +157,37 @@ namespace Loja_Unifunec.Views
 
         private void textBox4_KeyDown(object sender, KeyEventArgs e)
         {
-            if (textBox3.Text != "" && textBox4.Text != "")
+            if (e.KeyCode == Keys.Enter)
             {
-                
+                if (textBox3.Text != "" && textBox4.Text != "")
+                {
+                    DataTable dt = new DataTable();
+                    dt = c_Vendas.insereVendaProduto(codvenda, codprod, textBox4.Text, label8.Text);
+                    if (dt != null)
+                    {
+                        dataGridView1.DataSource = dt;
+                    }
+                }
+            }
+        }
+
+        private void Frm_Vendas_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!fechaForm)
+            {
+                if (lbl_codVenda.Text != "-")
+                {
+                    DialogResult result = MessageBox.Show("Deseja sair da Venda?", "ATENÇÃO", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
+                    {
+                        fechaForm = true;
+                        this.Close();
+                    }
+                    else
+                    {
+                        e.Cancel = true;
+                    }
+                }
             }
         }
     }
