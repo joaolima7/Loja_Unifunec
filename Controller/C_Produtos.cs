@@ -17,7 +17,9 @@ namespace Loja_Unifunec.Controller
         SqlCommand cmd;
         DataTable dataTableProdutos;
 
-        string sqlCarregarProdutos = "select*from produto";
+        string sqlCarregarProdutos = "select p.codproduto as CÓDIGO, p.nomeproduto as PRODUTO, p.quantidade as ESTOQUE," +
+            "p.valor as VALOR, m.nomemarca as MARCA, t.nometipo as TIPO from produto p join marca m on m.codmarca = p.codmarca_fk join tipo t" +
+            " on t.codtipo = p.codtipo_fk order by p.codproduto";
 
         public DataTable carregarProdutos()
         {
@@ -44,7 +46,7 @@ namespace Loja_Unifunec.Controller
             {
                 con.Close();
             }
-
+            dataTableProdutos = null;
             return dataTableProdutos;
         }
     }

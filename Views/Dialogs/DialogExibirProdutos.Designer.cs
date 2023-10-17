@@ -38,7 +38,7 @@
             // Txb_nomeproduto
             // 
             this.Txb_nomeproduto.BackColor = System.Drawing.SystemColors.Info;
-            this.Txb_nomeproduto.Location = new System.Drawing.Point(206, 39);
+            this.Txb_nomeproduto.Location = new System.Drawing.Point(77, 42);
             this.Txb_nomeproduto.Margin = new System.Windows.Forms.Padding(4);
             this.Txb_nomeproduto.Name = "Txb_nomeproduto";
             this.Txb_nomeproduto.Size = new System.Drawing.Size(628, 22);
@@ -48,7 +48,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(469, 9);
+            this.label2.Location = new System.Drawing.Point(340, 12);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 25);
@@ -72,20 +72,22 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1019, 494);
+            this.dataGridView1.Size = new System.Drawing.Size(780, 494);
             this.dataGridView1.TabIndex = 14;
             // 
             // DialogExibirProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 581);
+            this.ClientSize = new System.Drawing.Size(782, 581);
             this.Controls.Add(this.Txb_nomeproduto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DialogExibirProdutos";
             this.Text = "Produtos";
+            this.Load += new System.EventHandler(this.DialogExibirProdutos_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DialogExibirProdutos_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

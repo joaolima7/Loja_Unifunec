@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace Loja_Unifunec.Views
 {
@@ -152,6 +153,13 @@ namespace Loja_Unifunec.Views
             if (e.KeyCode == Keys.Enter)
             {
                 textBox4.Focus();
+            }
+            else if (e.KeyCode == Keys.F2)
+            {
+
+                    DialogExibirProdutos dialogExibirProdutos = new DialogExibirProdutos(this);
+                    dialogExibirProdutos.ShowDialog();
+                
             }
         }
 
