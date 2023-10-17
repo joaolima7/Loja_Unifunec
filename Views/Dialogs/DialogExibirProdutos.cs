@@ -39,5 +39,34 @@ namespace Loja_Unifunec.Views.Dialogs
         {
 
         }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dataGridView = (DataGridView)sender; // Obtém o DataGridView atual
+            if (dataGridView.CurrentRow != null)
+            {
+                DataGridViewRow selectedRow = dataGridView.CurrentRow;
+                var codigoProd = selectedRow.Cells["CÓDIGO"].Value.ToString();
+                var nomeProd = selectedRow.Cells["PRODUTO"].Value.ToString();
+                frm_vendas.adicionaProd(codigoProd, nomeProd);
+                this.Close();
+            }
+        }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                DataGridView dataGridView = (DataGridView)sender; // Obtém o DataGridView atual
+                if (dataGridView.CurrentRow != null)
+                {
+                    DataGridViewRow selectedRow = dataGridView.CurrentRow;
+                    var codigoProd = selectedRow.Cells["CÓDIGO"].Value.ToString();
+                    var nomeProd = selectedRow.Cells["PRODUTO"].Value.ToString();
+                    frm_vendas.adicionaProd(codigoProd,nomeProd);
+                    this.Close();
+                }
+            }
+        }
     }
 }

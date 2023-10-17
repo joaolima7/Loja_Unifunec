@@ -21,6 +21,7 @@ namespace Loja_Unifunec.Views
         public string codfunc;
         public string codvenda;
         public string codprod;
+        public string nomeprod;
         public string valorprod;
         public string datavenda;
         public string nomecliente;
@@ -52,6 +53,15 @@ namespace Loja_Unifunec.Views
             button5.Enabled = true;
             btn_imprimir.Enabled = true;
             label8.Text = "";
+        }
+
+        public void adicionaProd(string codprod, string nomeprod)
+        {
+            this.nomeprod = nomeprod;
+            this.codprod = codprod; 
+
+            textBox3.Text = this.nomeprod;
+            textBox4.Focus();
         }
 
 
