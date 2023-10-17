@@ -73,7 +73,9 @@ namespace Loja_Unifunec.Controller
             {
                 cmd.ExecuteNonQuery();
 
-                cmd.CommandText = "select * from itensvendaproduto where codvenda_fk = @codvenda";
+                cmd.CommandText = "select p.codproduto as CÓDIGO,1 p.nomeproduto as PRODUTO, p.valor as VALOR, ivp.quantidade as QUANTIDADE," +
+                                  "ivp.valor as VALOR from itensvendaproduto ivp join produto p on p.codproduto=ivp.codproduto_fk" +
+                                  " join venda v on v.codvenda=ivp.codvenda_fk where codvenda_fk = @codvenda order by p.nomeproduto";
                 cmd.Parameters.AddWithValue("@codvenda",codvenda);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dtVendas);

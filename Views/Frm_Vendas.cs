@@ -167,6 +167,9 @@ namespace Loja_Unifunec.Views
                     {
                         dataGridView1.DataSource = dt;
                     }
+                    textBox3.Text = "";
+                    textBox4.Text = "";
+                    label8.Text = "";
                 }
             }
         }

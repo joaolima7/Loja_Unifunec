@@ -62,6 +62,12 @@
     <Compile Include="Views\Dialogs\DialogExibirClientes.Designer.cs">
       <DependentUpon>DialogExibirClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dialogs\DialogExibirProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Dialogs\DialogExibirProdutos.Designer.cs">
+      <DependentUpon>DialogExibirProdutos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dialogs\DialogExibirClientes.resx">
       <DependentUpon>DialogExibirClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dialogs\DialogExibirProdutos.resx">
+      <DependentUpon>DialogExibirProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
