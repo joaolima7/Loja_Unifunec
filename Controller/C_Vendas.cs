@@ -21,7 +21,8 @@ namespace Loja_Unifunec.Controller
 
         string sqlCriarVenda = "insert into venda(datavenda, codcliente_fk, codfuncionario_fk) values (getdate(), @codcliente, @codfunc)";
         string sqlVendaProduto = "insert into itensvendaproduto(codvenda_fk, codproduto_fk, quantidade, valor) values (@codvenda, @codprod, @quant, @valor)";
-        string sqlExibirVendas = "select v.codvenda, v.datavenda, c.nomecliente, f.nomefuncionario from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.nomefuncionario=v.codfuncionario_fk ";
+        string sqlExibirVendas = "select v.codvenda as CÓDIGO, v.datavenda as DATA, c.nomecliente as CLIENTE, f.nomefuncionario as FUNCIONARIO from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.codfuncionario=v.codfuncionario_fk ";
+        string sqlPesquisaVendas = "select v.codvenda as CÓDIGO, v.datavenda as DATA, c.nomecliente as CLIENTE, f.nomefuncionario as FUNCIONARIO from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.codfuncionario=v.codfuncionario_fk where @param1 like @param2";
 
 
         public DataTable buscarVendas()
@@ -40,6 +41,37 @@ namespace Loja_Unifunec.Controller
                 return dtVendas;
 
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            dtVendas = null;
+            return dtVendas;
+        }
+
+        public DataTable pesquisaRealTime(string coluna, string pesquisa)
+        {
+            Conexao conexao = new Conexao();
+            con = conexao.conectaSQL();
+            dtVendas = new DataTable();
+
+            cmd = new SqlCommand(sqlPesquisaVendas, con);
+            cmd.Parameters.AddWithValue("@param1", coluna);
+            cmd.Parameters.AddWithValue("@param2", "%" + pesquisa + "%");
+            cmd.CommandType = CommandType.Text;
+
+            con.Open();
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dtVendas); // Carregar dados diretamente no DataTable
+                return dtVendas;
             }
             catch (Exception ex)
             {

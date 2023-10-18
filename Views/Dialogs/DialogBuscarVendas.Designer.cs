@@ -40,20 +40,18 @@
             // Txb_nomecliente
             // 
             this.Txb_nomecliente.BackColor = System.Drawing.SystemColors.Info;
-            this.Txb_nomecliente.Location = new System.Drawing.Point(50, 37);
-            this.Txb_nomecliente.Margin = new System.Windows.Forms.Padding(4);
+            this.Txb_nomecliente.Location = new System.Drawing.Point(38, 30);
             this.Txb_nomecliente.Name = "Txb_nomecliente";
-            this.Txb_nomecliente.Size = new System.Drawing.Size(310, 22);
+            this.Txb_nomecliente.Size = new System.Drawing.Size(234, 20);
             this.Txb_nomecliente.TabIndex = 16;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(250, 8);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(188, 6);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 25);
+            this.label2.Size = new System.Drawing.Size(82, 20);
             this.label2.TabIndex = 15;
             this.label2.Text = "Procurar:";
             // 
@@ -74,15 +72,15 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 77);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(2, 63);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(577, 428);
+            this.dataGridView1.Size = new System.Drawing.Size(433, 348);
             this.dataGridView1.TabIndex = 14;
             // 
             // comboBox1
@@ -92,23 +90,28 @@
             "Cód. Venda",
             "Data Venda",
             "Nome Cliente"});
-            this.comboBox1.Location = new System.Drawing.Point(367, 35);
+            this.comboBox1.Location = new System.Drawing.Point(275, 28);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(156, 24);
+            this.comboBox1.Size = new System.Drawing.Size(118, 21);
             this.comboBox1.TabIndex = 17;
             this.comboBox1.Text = "Nome Cliente";
             // 
             // DialogBuscarVendas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 506);
+            this.ClientSize = new System.Drawing.Size(436, 411);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Txb_nomecliente);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
             this.Name = "DialogBuscarVendas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vendas";
             this.Load += new System.EventHandler(this.DialogBuscarVendas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
