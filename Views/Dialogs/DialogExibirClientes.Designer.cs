@@ -74,7 +74,7 @@
             this.Txb_nomecliente.Name = "Txb_nomecliente";
             this.Txb_nomecliente.Size = new System.Drawing.Size(628, 22);
             this.Txb_nomecliente.TabIndex = 13;
-            this.Txb_nomecliente.TextChanged += new System.EventHandler(this.Txb_nomecliente_TextChanged);
+            //this.Txb_nomecliente.TextChanged += new System.EventHandler(this.Txb_nomecliente_TextChanged);
             this.Txb_nomecliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txb_nomecliente_KeyDown);
             this.Txb_nomecliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txb_nomecliente_KeyPress);
             // 

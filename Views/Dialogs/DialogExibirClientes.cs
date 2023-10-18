@@ -40,12 +40,7 @@ namespace Loja_Unifunec.Views.Dialogs
             }
         }
 
-        private void Txb_nomecliente_TextChanged(object sender, EventArgs e)
-        {
-            string pesquisa = Txb_nomecliente.Text;
 
-            dataGridView1.DataSource = c_Cliente.pesquisaRealTime(pesquisa);
-        }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

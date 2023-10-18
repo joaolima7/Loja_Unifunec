@@ -22,7 +22,9 @@ namespace Loja_Unifunec.Controller
         string sqlCriarVenda = "insert into venda(datavenda, codcliente_fk, codfuncionario_fk) values (getdate(), @codcliente, @codfunc)";
         string sqlVendaProduto = "insert into itensvendaproduto(codvenda_fk, codproduto_fk, quantidade, valor) values (@codvenda, @codprod, @quant, @valor)";
         string sqlExibirVendas = "select v.codvenda as CÓDIGO, v.datavenda as DATA, c.nomecliente as CLIENTE, f.nomefuncionario as FUNCIONARIO from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.codfuncionario=v.codfuncionario_fk ";
-        string sqlPesquisaVendas = "select v.codvenda as CÓDIGO, v.datavenda as DATA, c.nomecliente as CLIENTE, f.nomefuncionario as FUNCIONARIO from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.codfuncionario=v.codfuncionario_fk where @param1 like @param2";
+        string sqlPesquisaVendasCliente = "select v.codvenda as CÓDIGO, v.datavenda as DATA, c.nomecliente as CLIENTE, f.nomefuncionario as FUNCIONARIO from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.codfuncionario=v.codfuncionario_fk where c.nomecliente like @param2";
+        string sqlPesquisaVendasData = "select v.codvenda as CÓDIGO, v.datavenda as DATA, c.nomecliente as CLIENTE, f.nomefuncionario as FUNCIONARIO from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.codfuncionario=v.codfuncionario_fk where v.datavenda like @param2";
+        string sqlPesquisaVendasCod = "select v.codvenda as CÓDIGO, v.datavenda as DATA, c.nomecliente as CLIENTE, f.nomefuncionario as FUNCIONARIO from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.codfuncionario=v.codfuncionario_fk where v.codvenda = @param2";
 
 
         public DataTable buscarVendas()
@@ -54,15 +56,33 @@ namespace Loja_Unifunec.Controller
             return dtVendas;
         }
 
-        public DataTable pesquisaRealTime(string coluna, string pesquisa)
+        public DataTable pesquisaRealTime(string filtro, string pesquisa)
         {
+            
+            if (filtro == "sqlPesquisaVendasCliente")
+            {
+                
+                filtro = sqlPesquisaVendasCliente;
+                pesquisa = "%"+pesquisa+"%";
+            }
+            else if (filtro == "sqlPesquisaVendasData")
+            {
+              
+                filtro = sqlPesquisaVendasData;
+                pesquisa = "%" + pesquisa + "%";
+            }
+            else if (filtro == "sqlPesquisaVendasCod")
+            {
+                filtro = sqlPesquisaVendasCod;
+
+            }
             Conexao conexao = new Conexao();
             con = conexao.conectaSQL();
             dtVendas = new DataTable();
+            cmd = new SqlCommand(filtro, con);
+       
+            cmd.Parameters.AddWithValue("@param2", pesquisa);
 
-            cmd = new SqlCommand(sqlPesquisaVendas, con);
-            cmd.Parameters.AddWithValue("@param1", coluna);
-            cmd.Parameters.AddWithValue("@param2", "%" + pesquisa + "%");
             cmd.CommandType = CommandType.Text;
 
             con.Open();
@@ -70,7 +90,7 @@ namespace Loja_Unifunec.Controller
             try
             {
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dtVendas); // Carregar dados diretamente no DataTable
+                da.Fill(dtVendas);
                 return dtVendas;
             }
             catch (Exception ex)
