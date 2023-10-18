@@ -55,12 +55,14 @@ namespace Loja_Unifunec.Views
             label8.Text = "";
         }
 
-        public void adicionaProd(string codprod, string nomeprod)
+        public void adicionaProd(string codprod, string nomeprod,string valorprod)
         {
             this.nomeprod = nomeprod;
             this.codprod = codprod; 
+            this.valorprod= valorprod;
 
             textBox3.Text = this.nomeprod;
+            label8.Text= this.valorprod;
             textBox4.Focus();
         }
 
@@ -210,6 +212,32 @@ namespace Loja_Unifunec.Views
                     }
                 }
             }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            button4.Enabled = true;
+        }
+
+        private void dataGridView1_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            button4.Enabled = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DialogResult reuslt = MessageBox.Show("Deseja ");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogBuscarVendas dbv = new DialogBuscarVendas(this);  
+            dbv.ShowDialog();
         }
     }
 }

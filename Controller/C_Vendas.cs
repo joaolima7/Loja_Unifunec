@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,37 @@ namespace Loja_Unifunec.Controller
 
         string sqlCriarVenda = "insert into venda(datavenda, codcliente_fk, codfuncionario_fk) values (getdate(), @codcliente, @codfunc)";
         string sqlVendaProduto = "insert into itensvendaproduto(codvenda_fk, codproduto_fk, quantidade, valor) values (@codvenda, @codprod, @quant, @valor)";
+        string sqlExibirVendas = "select v.codvenda, v.datavenda, c.nomecliente, f.nomefuncionario from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.nomefuncionario=v.codfuncionario_fk ";
+
+
+        public DataTable buscarVendas()
+        {
+            dtVendas = new DataTable();
+            con = cn.conectaSQL();
+            cmd = new SqlCommand(sqlExibirVendas, con);
+            cmd.CommandType = CommandType.Text;
+
+            con.Open();
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dtVendas);
+                return dtVendas;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            dtVendas = null;
+            return dtVendas;
+        }
 
         public int criarVenda(string codcliente, string codfuncionario)
         {
@@ -58,13 +90,14 @@ namespace Loja_Unifunec.Controller
 
         public DataTable insereVendaProduto(string codvenda, string codproduto, string quantidade, string valor)
         {
+            
             dtVendas = new DataTable();
             con = cn.conectaSQL();
             cmd = new SqlCommand(sqlVendaProduto,con);
-            cmd.Parameters.AddWithValue("@codvenda",codvenda);
-            cmd.Parameters.AddWithValue("@codprod",codproduto);
-            cmd.Parameters.AddWithValue("@quant",quantidade);
-            cmd.Parameters.AddWithValue("@valor",valor);
+            cmd.Parameters.AddWithValue("@codvenda",int.Parse(codvenda));
+            cmd.Parameters.AddWithValue("@codprod",int.Parse(codproduto));
+            cmd.Parameters.AddWithValue("@quant",int.Parse(quantidade));
+            cmd.Parameters.AddWithValue("@valor",float.Parse(valor));
             cmd.CommandType = CommandType.Text;
 
             con.Open();
@@ -73,10 +106,10 @@ namespace Loja_Unifunec.Controller
             {
                 cmd.ExecuteNonQuery();
 
-                cmd.CommandText = "select p.codproduto as CÓDIGO,1 p.nomeproduto as PRODUTO, p.valor as VALOR, ivp.quantidade as QUANTIDADE," +
-                                  "ivp.valor as VALOR from itensvendaproduto ivp join produto p on p.codproduto=ivp.codproduto_fk" +
-                                  " join venda v on v.codvenda=ivp.codvenda_fk where codvenda_fk = @codvenda order by p.nomeproduto";
-                cmd.Parameters.AddWithValue("@codvenda",codvenda);
+                cmd.CommandText = "select p.codproduto as CÓDIGO, p.nomeproduto as PRODUTO, ivp.quantidade as QUANTIDADE," +
+                                  "ivp.valor as VALOR,ivp.valor*ivp.quantidade as TOTAL from itensvendaproduto ivp join produto p on p.codproduto=ivp.codproduto_fk" +
+                                  " join venda v on v.codvenda=ivp.codvenda_fk where codvenda_fk = @codvendaa order by p.nomeproduto";
+                cmd.Parameters.AddWithValue("@codvendaa",codvenda);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dtVendas);
                 return dtVendas;

@@ -48,7 +48,8 @@ namespace Loja_Unifunec.Views.Dialogs
                 DataGridViewRow selectedRow = dataGridView.CurrentRow;
                 var codigoProd = selectedRow.Cells["CÓDIGO"].Value.ToString();
                 var nomeProd = selectedRow.Cells["PRODUTO"].Value.ToString();
-                frm_vendas.adicionaProd(codigoProd, nomeProd);
+                var valorProd = selectedRow.Cells["VALOR"].Value.ToString();
+                frm_vendas.adicionaProd(codigoProd, nomeProd,valorProd);
                 this.Close();
             }
         }
@@ -63,7 +64,8 @@ namespace Loja_Unifunec.Views.Dialogs
                     DataGridViewRow selectedRow = dataGridView.CurrentRow;
                     var codigoProd = selectedRow.Cells["CÓDIGO"].Value.ToString();
                     var nomeProd = selectedRow.Cells["PRODUTO"].Value.ToString();
-                    frm_vendas.adicionaProd(codigoProd,nomeProd);
+                    var valorProd = selectedRow.Cells["VALOR"].Value.ToString();
+                    frm_vendas.adicionaProd(codigoProd,nomeProd,valorProd);
                     this.Close();
                 }
             }

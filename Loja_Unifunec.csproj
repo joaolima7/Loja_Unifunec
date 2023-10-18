@@ -51,6 +51,12 @@
     <Compile Include="Controller\C_Login.cs" />
     <Compile Include="Controller\C_Produtos.cs" />
     <Compile Include="Controller\C_Vendas.cs" />
+    <Compile Include="Views\Dialogs\DialogBuscarVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Dialogs\DialogBuscarVendas.Designer.cs">
+      <DependentUpon>DialogBuscarVendas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dialogs\DialogCriarVenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     <Compile Include="Views\Frm_Vendas.Designer.cs">
       <DependentUpon>Frm_Vendas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Dialogs\DialogBuscarVendas.resx">
+      <DependentUpon>DialogBuscarVendas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Dialogs\DialogCriarVenda.resx">
       <DependentUpon>DialogCriarVenda.cs</DependentUpon>
     </EmbeddedResource>
