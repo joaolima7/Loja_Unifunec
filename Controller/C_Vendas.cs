@@ -21,7 +21,9 @@ namespace Loja_Unifunec.Controller
 
         string sqlCriarVenda = "insert into venda(datavenda, codcliente_fk, codfuncionario_fk) values (getdate(), @codcliente, @codfunc)";
         string sqlVendaProduto = "insert into itensvendaproduto(codvenda_fk, codproduto_fk, quantidade, valor) values (@codvenda, @codprod, @quant, @valor)";
-        string sqlExibirVendas = "select v.codvenda as CÓDIGO, v.datavenda as DATA, c.nomecliente as CLIENTE, f.nomefuncionario as FUNCIONARIO from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.codfuncionario=v.codfuncionario_fk ";
+        string sqlExibirTodasVendas = "select v.codvenda as CÓDIGO, v.datavenda as DATA, c.nomecliente as CLIENTE, f.nomefuncionario as FUNCIONARIO from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.codfuncionario=v.codfuncionario_fk ";
+        string sqlExibirVendaSelecionada = "select v.datavenda, c.nomecliente, f.nomefuncionario from venda v join cliente c on c.codcliente=v.codcliente_fk join funcionario f on f.codfuncionario=v.codfuncionario_fk where v.codvenda = @param";
+        string sqlExibirVendaProdutoSelecionada = "select from itensvendaproduto ivp";
         string sqlPesquisaVendasCliente = "select v.codvenda as CÓDIGO, v.datavenda as DATA, c.nomecliente as CLIENTE, f.nomefuncionario as FUNCIONARIO from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.codfuncionario=v.codfuncionario_fk where c.nomecliente like @param2";
         string sqlPesquisaVendasData = "select v.codvenda as CÓDIGO, v.datavenda as DATA, c.nomecliente as CLIENTE, f.nomefuncionario as FUNCIONARIO from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.codfuncionario=v.codfuncionario_fk where v.datavenda like @param2";
         string sqlPesquisaVendasCod = "select v.codvenda as CÓDIGO, v.datavenda as DATA, c.nomecliente as CLIENTE, f.nomefuncionario as FUNCIONARIO from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.codfuncionario=v.codfuncionario_fk where v.codvenda = @param2";
@@ -31,7 +33,7 @@ namespace Loja_Unifunec.Controller
         {
             dtVendas = new DataTable();
             con = cn.conectaSQL();
-            cmd = new SqlCommand(sqlExibirVendas, con);
+            cmd = new SqlCommand(sqlExibirTodasVendas, con);
             cmd.CommandType = CommandType.Text;
 
             con.Open();
@@ -54,6 +56,42 @@ namespace Loja_Unifunec.Controller
             }
             dtVendas = null;
             return dtVendas;
+        }
+
+        public string[] buscarVendaSelecionada(string codvenda)
+        {
+            string[] dados = new string[3];
+            con = cn.conectaSQL();
+            cmd = new SqlCommand(sqlExibirVendaSelecionada, con);
+            cmd.Parameters.AddWithValue("@param", int.Parse(codvenda));
+            cmd.CommandType = CommandType.Text;
+
+            con.Open();
+
+            try
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    DateTime dataDoBanco = reader.GetDateTime(0);
+                    string dataFormatada = dataDoBanco.ToString("dd/MM/yyyy"); 
+                    dados[0] = dataFormatada;
+                    dados[0]=reader.GetString(1);
+                    dados[0]=reader.GetString(2);
+                    return dados;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            dados = null;
+            return dados;
         }
 
         public DataTable pesquisaRealTime(string filtro, string pesquisa)
@@ -82,9 +120,7 @@ namespace Loja_Unifunec.Controller
             cmd = new SqlCommand(filtro, con);
        
             cmd.Parameters.AddWithValue("@param2", pesquisa);
-
             cmd.CommandType = CommandType.Text;
-
             con.Open();
 
             try

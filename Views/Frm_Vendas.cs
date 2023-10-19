@@ -66,6 +66,20 @@ namespace Loja_Unifunec.Views
             textBox4.Focus();
         }
 
+        public void carregaVenda(string codigovenda)
+        {
+            this.codvenda = codigovenda;
+            string[] dados = new string[3];
+            dados=c_Vendas.buscarVendaSelecionada(codvenda);
+            this.datavenda = dados[0].ToString();
+            this.nomecliente = dados[1].ToString();
+            this.nomefunc = dados[2].ToString();
+            lbl_codVenda.Text = codvenda;
+            lbl_dataVenda.Text = datavenda;
+            textBox1.Text = nomecliente;
+            textBox2.Text = nomefunc;
+        }
+
 
         private void Frm_Vendas_Load(object sender, EventArgs e)
         {

@@ -66,14 +66,26 @@ namespace Loja_Unifunec.Views.Dialogs
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+                var codigoValue = selectedRow.Cells["CÓDIGO"].Value.ToString();
+                vendas.carregaVenda(codigoValue);
+                this.Close();
+            }
         }
 
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-
+                if (dataGridView1.CurrentRow != null)
+                {
+                    DataGridViewRow selectedRow = dataGridView1.CurrentRow;
+                    var codigoValue = selectedRow.Cells["CÓDIGO"].Value.ToString();
+                    vendas.carregaVenda(codigoValue);
+                    this.Close();
+                }
             }
         }
     }

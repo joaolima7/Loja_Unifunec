@@ -46,7 +46,6 @@ namespace Loja_Unifunec.Views.Dialogs
         {
             if (e.RowIndex >= 0)
             {
-
                 DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
                 // Obtém o valor da coluna "CODIGO" da linha selecionada
                 var codigoValue = selectedRow.Cells["CÓDIGO"].Value.ToString();
