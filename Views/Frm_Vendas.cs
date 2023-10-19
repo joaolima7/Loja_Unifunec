@@ -79,6 +79,8 @@ namespace Loja_Unifunec.Views
             lbl_dataVenda.Text = datavenda;
             textBox1.Text = nomecliente;
             textBox2.Text = nomefunc;
+            button4.Enabled = true;
+            button5.Enabled = true;
         }
 
 
@@ -253,6 +255,23 @@ namespace Loja_Unifunec.Views
         {
             DialogBuscarVendas dbv = new DialogBuscarVendas(this);  
             dbv.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Deseja excluir a Venda atual?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                c_Vendas.excluirVenda(codvenda);
+                lbl_codVenda.Text = "-";
+                lbl_dataVenda.Text = "__/__/____";
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                label8.Text = "";
+                dataGridView1.DataSource = null;
+            }
         }
     }
 }

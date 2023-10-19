@@ -20,6 +20,7 @@ namespace Loja_Unifunec.Controller
         DataTable dtVendas;
 
         string sqlCriarVenda = "insert into venda(datavenda, codcliente_fk, codfuncionario_fk) values (getdate(), @codcliente, @codfunc)";
+        string sqlExcluirVenda = "delete from venda where codvenda = @param";
         string sqlVendaProduto = "insert into itensvendaproduto(codvenda_fk, codproduto_fk, quantidade, valor) values (@codvenda, @codprod, @quant, @valor)";
         string sqlExibirTodasVendas = "select v.codvenda as CÓDIGO, v.datavenda as DATA, c.nomecliente as CLIENTE, f.nomefuncionario as FUNCIONARIO from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.codfuncionario=v.codfuncionario_fk ";
         string sqlExibirVendaSelecionada = "select v.datavenda, c.nomecliente, f.nomefuncionario from venda v join cliente c on c.codcliente=v.codcliente_fk join funcionario f on f.codfuncionario=v.codfuncionario_fk where v.codvenda = @param";
@@ -56,6 +57,32 @@ namespace Loja_Unifunec.Controller
             }
             dtVendas = null;
             return dtVendas;
+        }
+
+        public void excluirVenda(string codvenda)
+        {
+            con = cn.conectaSQL();
+            cmd = new SqlCommand(sqlExcluirVenda, con);
+            cmd.Parameters.AddWithValue("@param", int.Parse(codvenda));
+            cmd.CommandType = CommandType.Text;
+
+            con.Open();
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Venda Cód: "+codvenda+" excluida com Sucesso!","ÊXITO",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+
         }
 
         public DataTable buscarVendaProdutoSelecionada(string codvenda)
