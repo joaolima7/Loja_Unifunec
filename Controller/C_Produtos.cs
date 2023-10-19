@@ -20,6 +20,8 @@ namespace Loja_Unifunec.Controller
         string sqlCarregarProdutos = "select p.codproduto as CÓDIGO, p.nomeproduto as PRODUTO, p.quantidade as ESTOQUE," +
             "p.valor as VALOR, m.nomemarca as MARCA, t.nometipo as TIPO from produto p join marca m on m.codmarca = p.codmarca_fk join tipo t" +
             " on t.codtipo = p.codtipo_fk order by p.codproduto";
+        string sqlConsultaEstoque = "select quantidade from produto where codproduto = @param";
+        string sqlBaixaEstoque = "update produto set quantidade = quantidade - @quant where codproduto = @codprod";
 
         public DataTable carregarProdutos()
         {
@@ -49,5 +51,65 @@ namespace Loja_Unifunec.Controller
             dataTableProdutos = null;
             return dataTableProdutos;
         }
+
+
+        public decimal verificaEstoque(string codproduto)
+        {
+            decimal estoque = 0;
+            Conexao conexao = new Conexao();
+            con = conexao.conectaSQL();
+
+            cmd = new SqlCommand(sqlConsultaEstoque, con);
+            cmd.Parameters.AddWithValue("@param", int.Parse(codproduto));
+            cmd.CommandType = CommandType.Text;
+
+            con.Open();
+
+            try
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    estoque = reader.GetDecimal(0);
+                    return estoque;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return estoque;
+        }
+
+        public void baixaEstoque(string codproduto, string quantidade)
+        {
+            Conexao conexao = new Conexao();
+            con = conexao.conectaSQL();
+
+            cmd = new SqlCommand(sqlBaixaEstoque, con);
+            cmd.Parameters.AddWithValue("@quant", int.Parse(quantidade));
+            cmd.Parameters.AddWithValue("@codprod", int.Parse(codproduto));
+            cmd.CommandType = CommandType.Text;
+
+            con.Open();
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
     }
 }

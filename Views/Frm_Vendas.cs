@@ -198,15 +198,26 @@ namespace Loja_Unifunec.Views
             {
                 if (textBox3.Text != "" && textBox4.Text != "")
                 {
-                    DataTable dt = new DataTable();
-                    dt = c_Vendas.insereVendaProduto(codvenda, codprod, textBox4.Text, label8.Text);
-                    if (dt != null)
+                    C_Produtos c_Produtos = new C_Produtos();
+                    decimal estoque = c_Produtos.verificaEstoque(codprod);
+                    if (estoque >= int.Parse(textBox4.Text))
                     {
-                        dataGridView1.DataSource = dt;
+                        DataTable dt = new DataTable();
+                        dt = c_Vendas.insereVendaProduto(codvenda, codprod, textBox4.Text, label8.Text);
+                        c_Produtos.baixaEstoque(codprod,textBox4.Text);
+                        if (dt != null)
+                        {
+                            dataGridView1.DataSource = dt;
+                        }
+                        textBox3.Text = "";
+                        textBox4.Text = "";
+                        label8.Text = "";
                     }
-                    textBox3.Text = "";
-                    textBox4.Text = "";
-                    label8.Text = "";
+                    else
+                    {
+                        MessageBox.Show("Quantidade indisponível do produto!\nEstoque: "+estoque,"ATENÇÃO",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                    }
+
                 }
             }
         }
@@ -248,7 +259,7 @@ namespace Loja_Unifunec.Views
 
         private void button4_Click(object sender, EventArgs e)
         {
-            DialogResult reuslt = MessageBox.Show("Deseja ");
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -271,6 +282,10 @@ namespace Loja_Unifunec.Views
                 textBox4.Text = "";
                 label8.Text = "";
                 dataGridView1.DataSource = null;
+                button5.Enabled = false;
+                button4.Enabled = false;
+                button2.Enabled = true;
+                button1.Enabled = true;
             }
         }
     }
