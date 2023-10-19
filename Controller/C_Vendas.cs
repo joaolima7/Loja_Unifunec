@@ -23,7 +23,7 @@ namespace Loja_Unifunec.Controller
         string sqlVendaProduto = "insert into itensvendaproduto(codvenda_fk, codproduto_fk, quantidade, valor) values (@codvenda, @codprod, @quant, @valor)";
         string sqlExibirTodasVendas = "select v.codvenda as CÓDIGO, v.datavenda as DATA, c.nomecliente as CLIENTE, f.nomefuncionario as FUNCIONARIO from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.codfuncionario=v.codfuncionario_fk ";
         string sqlExibirVendaSelecionada = "select v.datavenda, c.nomecliente, f.nomefuncionario from venda v join cliente c on c.codcliente=v.codcliente_fk join funcionario f on f.codfuncionario=v.codfuncionario_fk where v.codvenda = @param";
-        string sqlExibirVendaProdutoSelecionada = "select from itensvendaproduto ivp";
+        string sqlExibirVendaProdutoSelecionada = "select p.codproduto as CÓDIGO, p.nomeproduto as PRODUTO, ivp.quantidade as QUANTIDADE,ivp.valor as VALOR,ivp.valor*ivp.quantidade as TOTAL from itensvendaproduto ivp join produto p on p.codproduto=ivp.codproduto_fk join venda v on v.codvenda=ivp.codvenda_fk where codvenda_fk = @codvendaa order by p.nomeproduto";
         string sqlPesquisaVendasCliente = "select v.codvenda as CÓDIGO, v.datavenda as DATA, c.nomecliente as CLIENTE, f.nomefuncionario as FUNCIONARIO from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.codfuncionario=v.codfuncionario_fk where c.nomecliente like @param2";
         string sqlPesquisaVendasData = "select v.codvenda as CÓDIGO, v.datavenda as DATA, c.nomecliente as CLIENTE, f.nomefuncionario as FUNCIONARIO from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.codfuncionario=v.codfuncionario_fk where v.datavenda like @param2";
         string sqlPesquisaVendasCod = "select v.codvenda as CÓDIGO, v.datavenda as DATA, c.nomecliente as CLIENTE, f.nomefuncionario as FUNCIONARIO from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.codfuncionario=v.codfuncionario_fk where v.codvenda = @param2";
@@ -58,8 +58,40 @@ namespace Loja_Unifunec.Controller
             return dtVendas;
         }
 
+        public DataTable buscarVendaProdutoSelecionada(string codvenda)
+        {
+            dtVendas = new DataTable();
+            con = cn.conectaSQL();
+            cmd = new SqlCommand(sqlExibirVendaProdutoSelecionada, con);
+            cmd.Parameters.AddWithValue("@codvendaa", codvenda);
+            cmd.CommandType = CommandType.Text;
+
+            con.Open();
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dtVendas);
+                return dtVendas;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            dtVendas = null;
+            return dtVendas;
+        }
+
+
         public string[] buscarVendaSelecionada(string codvenda)
         {
+            SqlDataReader reader;
             string[] dados = new string[3];
             con = cn.conectaSQL();
             cmd = new SqlCommand(sqlExibirVendaSelecionada, con);
@@ -70,14 +102,14 @@ namespace Loja_Unifunec.Controller
 
             try
             {
-                SqlDataReader reader = cmd.ExecuteReader();
+                reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     DateTime dataDoBanco = reader.GetDateTime(0);
                     string dataFormatada = dataDoBanco.ToString("dd/MM/yyyy"); 
                     dados[0] = dataFormatada;
-                    dados[0]=reader.GetString(1);
-                    dados[0]=reader.GetString(2);
+                    dados[1]=reader.GetString(1);
+                    dados[2]=reader.GetString(2);
                     return dados;
                 }
 

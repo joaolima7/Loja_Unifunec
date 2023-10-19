@@ -71,6 +71,7 @@ namespace Loja_Unifunec.Views
             this.codvenda = codigovenda;
             string[] dados = new string[3];
             dados=c_Vendas.buscarVendaSelecionada(codvenda);
+            dataGridView1.DataSource = c_Vendas.buscarVendaProdutoSelecionada(codvenda);
             this.datavenda = dados[0].ToString();
             this.nomecliente = dados[1].ToString();
             this.nomefunc = dados[2].ToString();
