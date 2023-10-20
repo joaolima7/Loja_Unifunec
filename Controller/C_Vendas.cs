@@ -21,6 +21,7 @@ namespace Loja_Unifunec.Controller
 
         string sqlCriarVenda = "insert into venda(datavenda, codcliente_fk, codfuncionario_fk) values (getdate(), @codcliente, @codfunc)";
         string sqlExcluirVenda = "delete from venda where codvenda = @param";
+        string sqlExcluirProdutoVenda = "delete from itensvendaproduto where codvenda_fk = @param and codproduto_fk = @param2 and quantidade = @param3";
         string sqlVendaProduto = "insert into itensvendaproduto(codvenda_fk, codproduto_fk, quantidade, valor) values (@codvenda, @codprod, @quant, @valor)";
         string sqlExibirTodasVendas = "select v.codvenda as CÓDIGO, v.datavenda as DATA, c.nomecliente as CLIENTE, f.nomefuncionario as FUNCIONARIO from venda v join cliente c on v.codcliente_fk=c.codcliente join funcionario f on f.codfuncionario=v.codfuncionario_fk ";
         string sqlExibirVendaSelecionada = "select v.datavenda, c.nomecliente, f.nomefuncionario from venda v join cliente c on c.codcliente=v.codcliente_fk join funcionario f on f.codfuncionario=v.codfuncionario_fk where v.codvenda = @param";
@@ -261,6 +262,46 @@ namespace Loja_Unifunec.Controller
                 da.Fill(dtVendas);
                 return dtVendas;
                 
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            dtVendas = null;
+            return dtVendas;
+
+        }
+
+
+        public DataTable excluirProdutoVenda(string codvenda, string codproduto, string quantidade)
+        {
+
+            dtVendas = new DataTable();
+            con = cn.conectaSQL();
+            cmd = new SqlCommand(sqlExcluirProdutoVenda, con);
+            cmd.Parameters.AddWithValue("@param", int.Parse(codvenda));
+            cmd.Parameters.AddWithValue("@param2", int.Parse(codproduto));
+            cmd.Parameters.AddWithValue("@param3", float.Parse(quantidade));
+            cmd.CommandType = CommandType.Text;
+
+            con.Open();
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Produto excluido!","ÊXITO",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+                cmd.CommandText = sqlExibirVendaProdutoSelecionada;
+                cmd.Parameters.AddWithValue("@codvendaa", int.Parse(codvenda));
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dtVendas);
+                return dtVendas;
+
 
             }
             catch (Exception ex)

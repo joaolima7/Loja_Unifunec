@@ -259,6 +259,18 @@ namespace Loja_Unifunec.Views
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (button4.Text == "Editar Venda")
+            {
+                button4.Text = "Finalizar Edição";
+                textBox3.Enabled = true;
+                textBox4.Enabled = true;
+            }
+            else if (button4.Text == "Finalizar Edição")
+            {
+                button4.Text = "Editar Venda";
+                textBox3.Enabled = false;
+                textBox4.Enabled = false;
+            }
 
         }
 
@@ -288,5 +300,38 @@ namespace Loja_Unifunec.Views
                 button1.Enabled = true;
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedCells.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Deseja excluir o produto da venda?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    DataGridViewRow selectedRow = dataGridView1.CurrentRow;
+                    var codigoValue = selectedRow.Cells["CÓDIGO"].Value.ToString();
+                    var quantValue = selectedRow.Cells["QUANTIDADE"].Value.ToString();
+                    dataGridView1.DataSource =c_Vendas.excluirProdutoVenda(codvenda,codigoValue,quantValue);
+                }
+
+            }
+        }
+
+        private void dataGridView1_DataSourceChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.DataSource != null)
+            {
+                button3.Enabled = true;
+            }
+            else
+            {
+                button3.Enabled = false;
+            }
+        }
+
+        //private void button3_EnabledChanged(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }
