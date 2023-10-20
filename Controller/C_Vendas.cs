@@ -15,7 +15,7 @@ namespace Loja_Unifunec.Controller
     internal class C_Vendas
     {
         Conexao cn = new Conexao();
-        SqlConnection con;
+        SqlConnection con;  
         SqlCommand cmd;
         DataTable dtVendas;
 
