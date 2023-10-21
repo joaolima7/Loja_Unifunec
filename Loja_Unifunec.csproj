@@ -202,6 +202,7 @@
     <Compile Include="Conection\Conexao.cs" />
     <Compile Include="Controller\C_Cliente.cs" />
     <Compile Include="Controller\C_Login.cs" />
+    <Compile Include="Controller\C_OpenForms.cs" />
     <Compile Include="Controller\C_Produtos.cs" />
     <Compile Include="Controller\C_Vendas.cs" />
     <Compile Include="lojafunecDataSet.Designer.cs">
@@ -325,6 +326,18 @@
     <Compile Include="Views\Frm_Rua.Designer.cs">
       <DependentUpon>Frm_Rua.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Frm_Sexo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Frm_Sexo.Designer.cs">
+      <DependentUpon>Frm_Sexo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Frm_Situacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Frm_Situacao.Designer.cs">
+      <DependentUpon>Frm_Situacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Frm_TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -342,6 +355,12 @@
     </Compile>
     <Compile Include="Views\Frm_Trabalho.Designer.cs">
       <DependentUpon>Frm_Trabalho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Frm_Uf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Frm_Uf.Designer.cs">
+      <DependentUpon>Frm_Uf.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Frm_Vendas.cs">
       <SubType>Form</SubType>

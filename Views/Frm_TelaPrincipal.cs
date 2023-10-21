@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Loja_Unifunec.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,9 +27,26 @@ namespace Loja_Unifunec.Views
 
         private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_Vendas vendas = new Frm_Vendas(usuario,codfunc);
-            vendas.MdiParent = this;
-            vendas.Show();
+
+            if (C_OpenForms.IsFormOpen(typeof(Frm_Vendas)))
+            {
+                // O formulário já está aberto, traga-o para a frente
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form.GetType() == typeof(Frm_Vendas))
+                    {
+                        form.BringToFront();
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                // O formulário não está aberto, abra-o
+                Frm_Vendas novoFormulario = new Frm_Vendas(usuario, codfunc);
+                novoFormulario.MdiParent = this;
+                novoFormulario.Show();
+            }
         }
 
         private void Frm_TelaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -52,6 +70,29 @@ namespace Loja_Unifunec.Views
         private void Frm_TelaPrincipal_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void acessosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (C_OpenForms.IsFormOpen(typeof(Frm_Acesso)))
+            {
+                // O formulário já está aberto, traga-o para a frente
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form.GetType() == typeof(Frm_Acesso))
+                    {
+                        form.BringToFront();
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                // O formulário não está aberto, abra-o
+                Frm_Acesso novoFormulario = new Frm_Acesso();
+                novoFormulario.MdiParent = this;
+                novoFormulario.Show();
+            }
         }
     }
 }
