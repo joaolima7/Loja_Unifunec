@@ -106,12 +106,14 @@
             this.bairrosToolStripMenuItem.Name = "bairrosToolStripMenuItem";
             this.bairrosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.bairrosToolStripMenuItem.Text = "Bairros";
+            this.bairrosToolStripMenuItem.Click += new System.EventHandler(this.bairrosToolStripMenuItem_Click);
             // 
             // cEPToolStripMenuItem
             // 
             this.cEPToolStripMenuItem.Name = "cEPToolStripMenuItem";
             this.cEPToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.cEPToolStripMenuItem.Text = "CEP";
+            this.cEPToolStripMenuItem.Click += new System.EventHandler(this.cEPToolStripMenuItem_Click);
             // 
             // cidadesToolStripMenuItem
             // 
@@ -130,6 +132,7 @@
             this.funçõesToolStripMenuItem.Name = "funçõesToolStripMenuItem";
             this.funçõesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.funçõesToolStripMenuItem.Text = "Funções";
+            this.funçõesToolStripMenuItem.Click += new System.EventHandler(this.funçõesToolStripMenuItem_Click);
             // 
             // funcionáriosToolStripMenuItem
             // 
@@ -142,24 +145,28 @@
             this.lojaToolStripMenuItem.Name = "lojaToolStripMenuItem";
             this.lojaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.lojaToolStripMenuItem.Text = "Lojas";
+            this.lojaToolStripMenuItem.Click += new System.EventHandler(this.lojaToolStripMenuItem_Click);
             // 
             // marcasToolStripMenuItem
             // 
             this.marcasToolStripMenuItem.Name = "marcasToolStripMenuItem";
             this.marcasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.marcasToolStripMenuItem.Text = "Marcas";
+            this.marcasToolStripMenuItem.Click += new System.EventHandler(this.marcasToolStripMenuItem_Click);
             // 
             // operadorasToolStripMenuItem
             // 
             this.operadorasToolStripMenuItem.Name = "operadorasToolStripMenuItem";
             this.operadorasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.operadorasToolStripMenuItem.Text = "Operadoras";
+            this.operadorasToolStripMenuItem.Click += new System.EventHandler(this.operadorasToolStripMenuItem_Click);
             // 
             // ruasToolStripMenuItem
             // 
             this.ruasToolStripMenuItem.Name = "ruasToolStripMenuItem";
             this.ruasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.ruasToolStripMenuItem.Text = "Ruas ";
+            this.ruasToolStripMenuItem.Click += new System.EventHandler(this.ruasToolStripMenuItem_Click);
             // 
             // telefonesToolStripMenuItem
             // 
@@ -172,18 +179,21 @@
             this.tiposToolStripMenuItem.Name = "tiposToolStripMenuItem";
             this.tiposToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.tiposToolStripMenuItem.Text = "Tipos";
+            this.tiposToolStripMenuItem.Click += new System.EventHandler(this.tiposToolStripMenuItem_Click);
             // 
             // tRabalhoToolStripMenuItem
             // 
             this.tRabalhoToolStripMenuItem.Name = "tRabalhoToolStripMenuItem";
             this.tRabalhoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.tRabalhoToolStripMenuItem.Text = "Trabalho";
+            this.tRabalhoToolStripMenuItem.Click += new System.EventHandler(this.tRabalhoToolStripMenuItem_Click);
             // 
             // uFToolStripMenuItem
             // 
             this.uFToolStripMenuItem.Name = "uFToolStripMenuItem";
             this.uFToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.uFToolStripMenuItem.Text = "UF";
+            this.uFToolStripMenuItem.Click += new System.EventHandler(this.uFToolStripMenuItem_Click);
             // 
             // produtosToolStripMenuItem
             // 
@@ -235,12 +245,14 @@
             this.situaçãoToolStripMenuItem.Name = "situaçãoToolStripMenuItem";
             this.situaçãoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.situaçãoToolStripMenuItem.Text = "Situação";
+            this.situaçãoToolStripMenuItem.Click += new System.EventHandler(this.situaçãoToolStripMenuItem_Click);
             // 
             // sexoToolStripMenuItem
             // 
             this.sexoToolStripMenuItem.Name = "sexoToolStripMenuItem";
             this.sexoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.sexoToolStripMenuItem.Text = "Sexo";
+            this.sexoToolStripMenuItem.Click += new System.EventHandler(this.sexoToolStripMenuItem_Click);
             // 
             // Frm_TelaPrincipal
             // 
