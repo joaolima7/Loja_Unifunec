@@ -31,11 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Funcoes));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btn_imprimir = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_imprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,15 +66,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(332, 231);
             this.dataGridView1.TabIndex = 29;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // btn_imprimir
-            // 
-            this.btn_imprimir.Image = global::Loja_Unifunec.Properties.Resources.imprimir__1_;
-            this.btn_imprimir.Location = new System.Drawing.Point(279, 270);
-            this.btn_imprimir.Name = "btn_imprimir";
-            this.btn_imprimir.Size = new System.Drawing.Size(45, 32);
-            this.btn_imprimir.TabIndex = 28;
-            this.btn_imprimir.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -120,6 +111,15 @@
             this.textBox1.Size = new System.Drawing.Size(235, 20);
             this.textBox1.TabIndex = 30;
             // 
+            // btn_imprimir
+            // 
+            this.btn_imprimir.Image = global::Loja_Unifunec.Properties.Resources.imprimir__1_;
+            this.btn_imprimir.Location = new System.Drawing.Point(279, 270);
+            this.btn_imprimir.Name = "btn_imprimir";
+            this.btn_imprimir.Size = new System.Drawing.Size(45, 32);
+            this.btn_imprimir.TabIndex = 28;
+            this.btn_imprimir.UseVisualStyleBackColor = true;
+            // 
             // Frm_Funcoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,6 +131,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_Funcoes";

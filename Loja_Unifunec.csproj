@@ -206,6 +206,7 @@
     <Compile Include="Controller\C_Cliente.cs" />
     <Compile Include="Controller\C_Funcao.cs" />
     <Compile Include="Controller\C_Login.cs" />
+    <Compile Include="Controller\C_Loja.cs" />
     <Compile Include="Controller\C_OpenForms.cs" />
     <Compile Include="Controller\C_Produtos.cs" />
     <Compile Include="Controller\C_Vendas.cs" />
@@ -408,6 +409,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_Funcoes.resx">
       <DependentUpon>Frm_Funcoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Frm_Loja.resx">
+      <DependentUpon>Frm_Loja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_TelaPrincipal.resx">
       <DependentUpon>Frm_TelaPrincipal.cs</DependentUpon>
