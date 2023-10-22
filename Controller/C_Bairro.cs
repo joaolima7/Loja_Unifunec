@@ -19,7 +19,7 @@ namespace Loja_Unifunec.Controller
         static SqlCommand cmd;
         static DataTable dtBairros;
 
-        static string sqlCarregarBairro = "select codbairro as CÓDIGO, nomebairro as BAIRRO from bairro";
+        static string sqlCarregarBairro = "select codbairro as CÓDIGO, nomebairro as BAIRRO from bairro order by codbairro";
         static string sqlInserirBairro = "insert into bairro(nomebairro) values(@param)";
         static string sqlExcluirBairro = "delete from bairro where codbairro = @param";
 

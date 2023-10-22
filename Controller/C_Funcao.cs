@@ -10,23 +10,23 @@ using System.Windows.Forms;
 
 namespace Loja_Unifunec.Controller
 {
-    public static class C_Cep
+    public static class C_Funcao
     {
 
         static Conexao conection = new Conexao();
         static SqlConnection con;
         static SqlCommand cmd;
-        static DataTable dtCep;
+        static DataTable dtFuncao;
 
-        static string sqlCarregarCep = "select codcep as CÓDIGO, numerocep as CEP from cep order by codcep";
-        static string sqlInserirCep = "insert into cep(numerocep) values(@param)";
-        static string sqlExcluirCep = "delete from cep where codcep = @param";
+        static string sqlCarregarFuncao = "select codfuncao as CÓDIGO, nomefuncao as FUNCAO from funcao order by codfuncao";
+        static string sqlInserirFuncao = "insert into funcao(nomefuncao) values(@param)";
+        static string sqlExcluirFuncao = "delete from funcao where codfuncao = @param";
 
-        public static DataTable carregarCep()
+        public static DataTable carregarFuncao()
         {
-            dtCep = new DataTable();
+            dtFuncao = new DataTable();
             con = conection.conectaSQL();
-            cmd = new SqlCommand(sqlCarregarCep, con);
+            cmd = new SqlCommand(sqlCarregarFuncao, con);
             cmd.CommandType = CommandType.Text;
 
             con.Open();
@@ -34,8 +34,8 @@ namespace Loja_Unifunec.Controller
             try
             {
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dtCep);
-                return dtCep;
+                da.Fill(dtFuncao);
+                return dtFuncao;
 
 
             }
@@ -47,51 +47,16 @@ namespace Loja_Unifunec.Controller
             {
                 con.Close();
             }
-            dtCep = null;
-            return dtCep;
+            dtFuncao = null;
+            return dtFuncao;
         }
 
-
-        public static DataTable inserirCep(string numcep)
+        public static DataTable inserirFuncao(string nomefuncao)
         {
-            dtCep = new DataTable();
+            dtFuncao = new DataTable();
             con = conection.conectaSQL();
-            cmd = new SqlCommand(sqlInserirCep, con);
-            cmd.Parameters.AddWithValue("@param", numcep);
-            cmd.CommandType = CommandType.Text;
-
-            con.Open();
-
-            try
-            {
-
-                cmd.ExecuteNonQuery();
-
-                cmd.CommandText = sqlCarregarCep;
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dtCep);
-                return dtCep;
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
-            }
-            finally
-            {
-                con.Close();
-            }
-            dtCep = null;
-            return dtCep;
-        }
-
-        public static DataTable excluirCep(string codcep)
-        {
-            dtCep = new DataTable();
-            con = conection.conectaSQL();
-            cmd = new SqlCommand(sqlExcluirCep, con);
-            cmd.Parameters.AddWithValue("@param", int.Parse(codcep));
+            cmd = new SqlCommand(sqlInserirFuncao, con);
+            cmd.Parameters.AddWithValue("@param", nomefuncao);
             cmd.CommandType = CommandType.Text;
 
             con.Open();
@@ -101,10 +66,10 @@ namespace Loja_Unifunec.Controller
 
                 cmd.ExecuteNonQuery();
 
-                cmd.CommandText = sqlCarregarCep;
+                cmd.CommandText = sqlCarregarFuncao;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dtCep);
-                return dtCep;
+                da.Fill(dtFuncao);
+                return dtFuncao;
 
 
             }
@@ -116,9 +81,44 @@ namespace Loja_Unifunec.Controller
             {
                 con.Close();
             }
-            dtCep = null;
-            return dtCep;
+            dtFuncao = null;
+            return dtFuncao;
         }
+
+        public static DataTable excluirFuncao(string codfuncao)
+        {
+            dtFuncao = new DataTable();
+            con = conection.conectaSQL();
+            cmd = new SqlCommand(sqlExcluirFuncao, con);
+            cmd.Parameters.AddWithValue("@param", int.Parse(codfuncao));
+            cmd.CommandType = CommandType.Text;
+
+            con.Open();
+
+            try
+            {
+
+                cmd.ExecuteNonQuery();
+
+                cmd.CommandText = sqlCarregarFuncao;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dtFuncao);
+                return dtFuncao;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            dtFuncao = null;
+            return dtFuncao;
+        }
+
 
     }
 }
