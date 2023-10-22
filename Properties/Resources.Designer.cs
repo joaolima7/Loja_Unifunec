@@ -63,9 +63,29 @@ namespace Loja_Unifunec.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap botao_de_interface_de_opcao_de_visualizacao_em_cascata {
+            get {
+                object obj = ResourceManager.GetObject("botao-de-interface-de-opcao-de-visualizacao-em-cascata", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap configuracoes {
             get {
                 object obj = ResourceManager.GetObject("configuracoes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap espaco_de_trabalho_com_duas_janelas_horizontais {
+            get {
+                object obj = ResourceManager.GetObject("espaco-de-trabalho-com-duas-janelas-horizontais", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -86,6 +106,16 @@ namespace Loja_Unifunec.Properties {
         internal static System.Drawing.Bitmap imprimir__1_ {
             get {
                 object obj = ResourceManager.GetObject("imprimir (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap livros_da_biblioteca_ou_quatro_linhas_verticais {
+            get {
+                object obj = ResourceManager.GetObject("livros-da-biblioteca-ou-quatro-linhas-verticais", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

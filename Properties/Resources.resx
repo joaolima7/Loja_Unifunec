@@ -118,19 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="unifunec-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\unifunec-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imprimir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imprimir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="configuracoes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\configuracoes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imprimir (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imprimir (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logoU-azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoU-azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imprimir (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imprimir (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="unifunec-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unifunec-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="botao-de-interface-de-opcao-de-visualizacao-em-cascata" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\botao-de-interface-de-opcao-de-visualizacao-em-cascata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="livros-da-biblioteca-ou-quatro-linhas-verticais" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\livros-da-biblioteca-ou-quatro-linhas-verticais.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imprimir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imprimir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="espaco-de-trabalho-com-duas-janelas-horizontais" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\espaco-de-trabalho-com-duas-janelas-horizontais.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

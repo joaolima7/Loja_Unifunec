@@ -200,6 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conection\Conexao.cs" />
+    <Compile Include="Controller\C_Acesso.cs" />
     <Compile Include="Controller\C_Cliente.cs" />
     <Compile Include="Controller\C_Login.cs" />
     <Compile Include="Controller\C_OpenForms.cs" />
@@ -393,6 +394,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Frm_Acesso.resx">
+      <DependentUpon>Frm_Acesso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_TelaPrincipal.resx">
       <DependentUpon>Frm_TelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -439,6 +443,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\botao-de-interface-de-opcao-de-visualizacao-em-cascata.png" />
+    <None Include="Resources\livros-da-biblioteca-ou-quatro-linhas-verticais.png" />
+    <None Include="Resources\espaco-de-trabalho-com-duas-janelas-horizontais.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
