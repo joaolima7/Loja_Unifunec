@@ -34,8 +34,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btn_imprimir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_imprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +61,7 @@
             // 
             // button4
             // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.ForeColor = System.Drawing.Color.Black;
             this.button4.Location = new System.Drawing.Point(151, 276);
             this.button4.Name = "button4";
@@ -81,15 +82,6 @@
             this.button1.Text = "Adcionar Acesso";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btn_imprimir
-            // 
-            this.btn_imprimir.Image = global::Loja_Unifunec.Properties.Resources.imprimir__1_;
-            this.btn_imprimir.Location = new System.Drawing.Point(276, 275);
-            this.btn_imprimir.Name = "btn_imprimir";
-            this.btn_imprimir.Size = new System.Drawing.Size(45, 32);
-            this.btn_imprimir.TabIndex = 10;
-            this.btn_imprimir.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -118,6 +110,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(332, 231);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // btn_imprimir
+            // 
+            this.btn_imprimir.Image = global::Loja_Unifunec.Properties.Resources.imprimir__1_;
+            this.btn_imprimir.Location = new System.Drawing.Point(276, 275);
+            this.btn_imprimir.Name = "btn_imprimir";
+            this.btn_imprimir.Size = new System.Drawing.Size(45, 32);
+            this.btn_imprimir.TabIndex = 10;
+            this.btn_imprimir.UseVisualStyleBackColor = true;
             // 
             // Frm_Acesso
             // 

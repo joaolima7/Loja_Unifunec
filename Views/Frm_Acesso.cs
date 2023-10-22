@@ -24,10 +24,13 @@ namespace Loja_Unifunec.Views
             {
                 if (textBox1.Text != "")
                 {
-                   DialogResult res = MessageBox.Show("Deseja ecluir o Acesso?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DataGridViewRow row = dataGridView1.CurrentRow;
+                    string cod = row.Cells["CÓDIGO"].Value.ToString();
+                    DialogResult res = MessageBox.Show("Deseja ecluir o Acesso Cód. "+cod+" ?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (res == DialogResult.Yes)
                     {
-                        //C_Acesso.
+                        dataGridView1.DataSource = C_Acesso.excluirAcessos(cod);
+                        MessageBox.Show("Acesso Cód. "+cod+" Excluido com Sucesso", "ÊXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
@@ -37,6 +40,7 @@ namespace Loja_Unifunec.Views
             }
             else if (button4.Text=="Cancelar")
             {
+                textBox1.Enabled = false;
                 button4.Text = "Excluir Acesso";
                 textBox1.Text = "";
                 button1.Text = "Adcionar Acesso";
@@ -50,7 +54,6 @@ namespace Loja_Unifunec.Views
                 textBox1.Text = "";
                 button1.Text = "Salvar Acesso";
                 button4.Text = "Cancelar";
-                button4.Enabled = false;
                 textBox1.Enabled = true;
             }
             else if (button1.Text == "Salvar Acesso")
@@ -61,7 +64,6 @@ namespace Loja_Unifunec.Views
                 }
                 button1.Text = "Adcionar Acesso";
                 button4.Text = "Excluir Acesso";
-                button4.Enabled = false;
                 textBox1.Enabled = false;
             }
         }
