@@ -202,6 +202,7 @@
     <Compile Include="Conection\Conexao.cs" />
     <Compile Include="Controller\C_Acesso.cs" />
     <Compile Include="Controller\C_Bairro.cs" />
+    <Compile Include="Controller\C_Cep.cs" />
     <Compile Include="Controller\C_Cliente.cs" />
     <Compile Include="Controller\C_Login.cs" />
     <Compile Include="Controller\C_OpenForms.cs" />
@@ -400,6 +401,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_Bairros.resx">
       <DependentUpon>Frm_Bairros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Frm_Cep.resx">
+      <DependentUpon>Frm_Cep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_TelaPrincipal.resx">
       <DependentUpon>Frm_TelaPrincipal.cs</DependentUpon>
