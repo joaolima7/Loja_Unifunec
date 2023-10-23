@@ -19,8 +19,8 @@ namespace Loja_Unifunec.Controller
         static SqlCommand cmd;
         static DataTable dtLoja;
 
-        static string sqlCarregarLoja = "select codloja as CÓDIGO, nomeloja as LOJA from loja order by codloja";
-        static string sqlInserirLoja = "insert into loja(nomeloja) values(@param)";
+        static string sqlCarregarLoja = "select codloja as CÓDIGO, nomeloja as LOJA, cnpj as CNPJ, nomefantasia as 'NOME FANTASIA', razaosocial as 'RAZAO SOCIAL' from loja order by codloja";
+        static string sqlInserirLoja = "insert into loja(nomeloja, cnpj, nomefantasia, razaosocial) values(@nomeloja, @cnpj, @nomefantasia, @razaosocial)";
         static string sqlExcluirLoja = "delete from loja where codloja = @param";
 
         public static DataTable carregarLoja()
@@ -52,12 +52,15 @@ namespace Loja_Unifunec.Controller
             return dtLoja;
         }
 
-        public static DataTable inserirLoja(string nomeloja)
+        public static DataTable inserirLoja(string nomeloja, string cnpj, string nomefantasia, string razaosocial)
         {
             dtLoja = new DataTable();
             con = conection.conectaSQL();
             cmd = new SqlCommand(sqlInserirLoja, con);
-            cmd.Parameters.AddWithValue("@param", nomeloja);
+            cmd.Parameters.AddWithValue("@nomeloja", nomeloja);
+            cmd.Parameters.AddWithValue("@cnpj", cnpj);
+            cmd.Parameters.AddWithValue("@nomefantasia", nomefantasia);
+            cmd.Parameters.AddWithValue("@razaosocial", razaosocial);
             cmd.CommandType = CommandType.Text;
 
             con.Open();
