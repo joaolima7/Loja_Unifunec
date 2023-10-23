@@ -179,6 +179,7 @@
             // 
             // maskedTextBox1
             // 
+            this.maskedTextBox1.BackColor = System.Drawing.Color.White;
             this.maskedTextBox1.Location = new System.Drawing.Point(72, 121);
             this.maskedTextBox1.Mask = "00.000.000/0000-00";
             this.maskedTextBox1.Name = "maskedTextBox1";
