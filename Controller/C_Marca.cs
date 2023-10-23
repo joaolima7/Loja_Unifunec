@@ -91,7 +91,7 @@ namespace Loja_Unifunec.Controller
         {
             dtMarca = new DataTable();
             con = conection.conectaSQL();
-            cmd = new SqlCommand(sqlInserirMarca, con);
+            cmd = new SqlCommand(sqlExcluirMarca, con);
             cmd.Parameters.AddWithValue("@param", int.Parse(codmarca));
             cmd.CommandType = CommandType.Text;
 
