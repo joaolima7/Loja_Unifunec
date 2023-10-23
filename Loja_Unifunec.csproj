@@ -210,6 +210,7 @@
     <Compile Include="Controller\C_Marca.cs" />
     <Compile Include="Controller\C_OpenForms.cs" />
     <Compile Include="Controller\C_Produtos.cs" />
+    <Compile Include="Controller\C_Tipo.cs" />
     <Compile Include="Controller\C_Vendas.cs" />
     <Compile Include="lojafunecDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -417,8 +418,14 @@
     <EmbeddedResource Include="Views\Frm_Marca.resx">
       <DependentUpon>Frm_Marca.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Frm_Situacao.resx">
+      <DependentUpon>Frm_Situacao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_TelaPrincipal.resx">
       <DependentUpon>Frm_TelaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Frm_Tipos.resx">
+      <DependentUpon>Frm_Tipos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_Vendas.resx">
       <DependentUpon>Frm_Vendas.cs</DependentUpon>
