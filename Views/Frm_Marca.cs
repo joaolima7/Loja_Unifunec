@@ -48,7 +48,7 @@ namespace Loja_Unifunec.Views
                 {
                     DataGridViewRow row = dataGridView1.CurrentRow;
                     string cod = row.Cells["CÓDIGO"].Value.ToString();
-                    DialogResult res = MessageBox.Show("Deseja ecluir a Marca Cód. " + cod + " ?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult res = MessageBox.Show("Deseja excluir a Marca Cód. " + cod + " ?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (res == DialogResult.Yes)
                     {
                         dataGridView1.DataSource = C_Marca.excluirMarca(cod);

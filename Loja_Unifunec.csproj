@@ -210,6 +210,7 @@
     <Compile Include="Controller\C_Marca.cs" />
     <Compile Include="Controller\C_OpenForms.cs" />
     <Compile Include="Controller\C_Produtos.cs" />
+    <Compile Include="Controller\C_Sexo.cs" />
     <Compile Include="Controller\C_Situacao.cs" />
     <Compile Include="Controller\C_Tipo.cs" />
     <Compile Include="Controller\C_Vendas.cs" />
@@ -418,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_Marca.resx">
       <DependentUpon>Frm_Marca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Frm_Sexo.resx">
+      <DependentUpon>Frm_Sexo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_Situacao.resx">
       <DependentUpon>Frm_Situacao.cs</DependentUpon>
