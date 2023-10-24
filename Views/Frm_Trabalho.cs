@@ -16,5 +16,25 @@ namespace Loja_Unifunec.Views
         {
             InitializeComponent();
         }
+
+        private void Frm_Trabalho_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

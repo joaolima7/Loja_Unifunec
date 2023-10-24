@@ -214,6 +214,8 @@
     <Compile Include="Controller\C_Sexo.cs" />
     <Compile Include="Controller\C_Situacao.cs" />
     <Compile Include="Controller\C_Tipo.cs" />
+    <Compile Include="Controller\C_Trabalho.cs" />
+    <Compile Include="Controller\C_Uf.cs" />
     <Compile Include="Controller\C_Vendas.cs" />
     <Compile Include="lojafunecDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -435,6 +437,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_Tipos.resx">
       <DependentUpon>Frm_Tipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Frm_Trabalho.resx">
+      <DependentUpon>Frm_Trabalho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Frm_Uf.resx">
+      <DependentUpon>Frm_Uf.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_Vendas.resx">
       <DependentUpon>Frm_Vendas.cs</DependentUpon>
