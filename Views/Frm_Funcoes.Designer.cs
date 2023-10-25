@@ -56,14 +56,15 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 34);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 42);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowCellErrors = false;
             this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(332, 231);
+            this.dataGridView1.Size = new System.Drawing.Size(443, 284);
             this.dataGridView1.TabIndex = 29;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -71,9 +72,10 @@
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(154, 271);
+            this.button4.Location = new System.Drawing.Point(205, 334);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(95, 30);
+            this.button4.Size = new System.Drawing.Size(127, 37);
             this.button4.TabIndex = 27;
             this.button4.Text = "Excluir Função";
             this.button4.UseVisualStyleBackColor = true;
@@ -83,9 +85,10 @@
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(33, 271);
+            this.button1.Location = new System.Drawing.Point(44, 334);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 30);
+            this.button1.Size = new System.Drawing.Size(128, 37);
             this.button1.TabIndex = 26;
             this.button1.Text = "Adcionar Função";
             this.button1.UseVisualStyleBackColor = true;
@@ -96,9 +99,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(9, 7);
+            this.label4.Location = new System.Drawing.Point(12, 9);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 15);
+            this.label4.Size = new System.Drawing.Size(119, 18);
             this.label4.TabIndex = 25;
             this.label4.Text = "Nome Função:";
             // 
@@ -106,25 +110,29 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(109, 7);
+            this.textBox1.Location = new System.Drawing.Point(145, 9);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(235, 20);
+            this.textBox1.Size = new System.Drawing.Size(312, 22);
             this.textBox1.TabIndex = 30;
             // 
             // btn_imprimir
             // 
+            this.btn_imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_imprimir.Image = global::Loja_Unifunec.Properties.Resources.imprimir__1_;
-            this.btn_imprimir.Location = new System.Drawing.Point(279, 270);
+            this.btn_imprimir.Location = new System.Drawing.Point(372, 332);
+            this.btn_imprimir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_imprimir.Name = "btn_imprimir";
-            this.btn_imprimir.Size = new System.Drawing.Size(45, 32);
+            this.btn_imprimir.Size = new System.Drawing.Size(60, 39);
             this.btn_imprimir.TabIndex = 28;
             this.btn_imprimir.UseVisualStyleBackColor = true;
+            this.btn_imprimir.Click += new System.EventHandler(this.btn_imprimir_Click);
             // 
             // Frm_Funcoes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(353, 308);
+            this.ClientSize = new System.Drawing.Size(471, 379);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_imprimir);
@@ -133,6 +141,7 @@
             this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "Frm_Funcoes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

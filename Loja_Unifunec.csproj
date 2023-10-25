@@ -407,6 +407,30 @@
     <Compile Include="Views\Reports\Frm_Report_Bairro.Designer.cs">
       <DependentUpon>Frm_Report_Bairro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Cep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Cep.Designer.cs">
+      <DependentUpon>Frm_Report_Cep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Funcoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Funcoes.Designer.cs">
+      <DependentUpon>Frm_Report_Funcoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Loja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Loja.Designer.cs">
+      <DependentUpon>Frm_Report_Loja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Marcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Marcas.Designer.cs">
+      <DependentUpon>Frm_Report_Marcas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\Dialogs\DialogBuscarVendas.resx">
       <DependentUpon>DialogBuscarVendas.cs</DependentUpon>
     </EmbeddedResource>
@@ -480,7 +504,23 @@
     <EmbeddedResource Include="Views\Reports\Frm_Report_Bairro.resx">
       <DependentUpon>Frm_Report_Bairro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Frm_Report_Cep.resx">
+      <DependentUpon>Frm_Report_Cep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Frm_Report_Funcoes.resx">
+      <DependentUpon>Frm_Report_Funcoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Frm_Report_Loja.resx">
+      <DependentUpon>Frm_Report_Loja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Frm_Report_Marcas.resx">
+      <DependentUpon>Frm_Report_Marcas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\ReportVendas.rdlc" />
+    <EmbeddedResource Include="Views\Reports\Report_Marcas.rdlc" />
+    <EmbeddedResource Include="Views\Reports\Report_Lojas.rdlc" />
+    <EmbeddedResource Include="Views\Reports\Report_Funcoes.rdlc" />
+    <EmbeddedResource Include="Views\Reports\Report_Cep.rdlc" />
     <EmbeddedResource Include="Views\Reports\Report_Bairros.rdlc" />
     <EmbeddedResource Include="Views\Reports\Report_Acessos.rdlc" />
     <None Include="lojafunecDataSet.xsc">

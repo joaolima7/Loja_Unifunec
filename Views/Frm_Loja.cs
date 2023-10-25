@@ -1,4 +1,5 @@
 ﻿using Loja_Unifunec.Controller;
+using Loja_Unifunec.Views.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -96,6 +97,12 @@ namespace Loja_Unifunec.Views
         private void Frm_Loja_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = C_Loja.carregarLoja();
+        }
+
+        private void btn_imprimir_Click(object sender, EventArgs e)
+        {
+            Frm_Report_Loja frm = new Frm_Report_Loja();
+            frm.ShowDialog();
         }
     }
 }
