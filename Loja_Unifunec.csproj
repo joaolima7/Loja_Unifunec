@@ -227,6 +227,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>lojafunecDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="lojafunecDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lojafunecDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lojafunecDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lojafunecDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Views\Dialogs\DialogBuscarVendas.cs">
       <SubType>Form</SubType>
@@ -391,6 +401,12 @@
     <Compile Include="Views\Reports\Frm_Report_Acesso.Designer.cs">
       <DependentUpon>Frm_Report_Acesso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Bairro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Bairro.Designer.cs">
+      <DependentUpon>Frm_Report_Bairro.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\Dialogs\DialogBuscarVendas.resx">
       <DependentUpon>DialogBuscarVendas.cs</DependentUpon>
     </EmbeddedResource>
@@ -461,7 +477,11 @@
     <EmbeddedResource Include="Views\Reports\Frm_Report_Acesso.resx">
       <DependentUpon>Frm_Report_Acesso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Frm_Report_Bairro.resx">
+      <DependentUpon>Frm_Report_Bairro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\ReportVendas.rdlc" />
+    <EmbeddedResource Include="Views\Reports\Report_Bairros.rdlc" />
     <EmbeddedResource Include="Views\Reports\Report_Acessos.rdlc" />
     <None Include="lojafunecDataSet.xsc">
       <DependentUpon>lojafunecDataSet.xsd</DependentUpon>
@@ -484,6 +504,28 @@
     </None>
     <None Include="lojafunecDataSet1.xss">
       <DependentUpon>lojafunecDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="lojafunecDataSet2.xsc">
+      <DependentUpon>lojafunecDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="lojafunecDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lojafunecDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lojafunecDataSet2.xss">
+      <DependentUpon>lojafunecDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="lojafunecDataSet3.xsc">
+      <DependentUpon>lojafunecDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="lojafunecDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lojafunecDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lojafunecDataSet3.xss">
+      <DependentUpon>lojafunecDataSet3.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
