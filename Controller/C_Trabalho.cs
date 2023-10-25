@@ -51,7 +51,7 @@ namespace Loja_Unifunec.Controller
             return dtTrabalho;
         }
 
-        public static DataTable inserirRua(string nometrabalho)
+        public static DataTable inserirTrabalho(string nometrabalho)
         {
             dtTrabalho = new DataTable();
             con = conection.conectaSQL();

@@ -222,6 +222,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>lojafunecDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="lojafunecDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lojafunecDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Views\Dialogs\DialogBuscarVendas.cs">
       <SubType>Form</SubType>
@@ -380,6 +385,12 @@
     <Compile Include="Views\Frm_Vendas.Designer.cs">
       <DependentUpon>Frm_Vendas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Acesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Acesso.Designer.cs">
+      <DependentUpon>Frm_Report_Acesso.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\Dialogs\DialogBuscarVendas.resx">
       <DependentUpon>DialogBuscarVendas.cs</DependentUpon>
     </EmbeddedResource>
@@ -447,7 +458,11 @@
     <EmbeddedResource Include="Views\Frm_Vendas.resx">
       <DependentUpon>Frm_Vendas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Frm_Report_Acesso.resx">
+      <DependentUpon>Frm_Report_Acesso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\ReportVendas.rdlc" />
+    <EmbeddedResource Include="Views\Reports\Report_Acessos.rdlc" />
     <None Include="lojafunecDataSet.xsc">
       <DependentUpon>lojafunecDataSet.xsd</DependentUpon>
     </None>
@@ -458,6 +473,17 @@
     </None>
     <None Include="lojafunecDataSet.xss">
       <DependentUpon>lojafunecDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="lojafunecDataSet1.xsc">
+      <DependentUpon>lojafunecDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="lojafunecDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lojafunecDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lojafunecDataSet1.xss">
+      <DependentUpon>lojafunecDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
