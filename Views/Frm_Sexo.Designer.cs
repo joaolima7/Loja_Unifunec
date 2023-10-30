@@ -80,6 +80,7 @@
             // 
             // btn_imprimir
             // 
+            this.btn_imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_imprimir.Image = global::Loja_Unifunec.Properties.Resources.imprimir__1_;
             this.btn_imprimir.Location = new System.Drawing.Point(372, 331);
             this.btn_imprimir.Margin = new System.Windows.Forms.Padding(4);
@@ -87,6 +88,7 @@
             this.btn_imprimir.Size = new System.Drawing.Size(60, 39);
             this.btn_imprimir.TabIndex = 40;
             this.btn_imprimir.UseVisualStyleBackColor = true;
+            this.btn_imprimir.Click += new System.EventHandler(this.btn_imprimir_Click);
             // 
             // button4
             // 

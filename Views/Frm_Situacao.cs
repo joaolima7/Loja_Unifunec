@@ -1,4 +1,5 @@
 ﻿using Loja_Unifunec.Controller;
+using Loja_Unifunec.Views.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -78,6 +79,12 @@ namespace Loja_Unifunec.Views
         {
             DataGridViewRow row = dataGridView1.CurrentRow;
             textBox1.Text = row.Cells["SITUACAO"].Value.ToString();
+        }
+
+        private void btn_imprimir_Click(object sender, EventArgs e)
+        {
+            Frm_Report_Situacao frm = new Frm_Report_Situacao();
+            frm.ShowDialog();
         }
     }
 }

@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace Loja_Unifunec.Views.Reports
 {
-    public partial class Frm_Report_Trabalho : Form
+    public partial class Frm_Report_Situacao : Form
     {
-        public Frm_Report_Trabalho()
+        public Frm_Report_Situacao()
         {
             InitializeComponent();
         }
 
-        private void Frm_Report_Trabalho_Load(object sender, EventArgs e)
+        private void Frm_Report_Situacao_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'lojafunecDataSet3.trabalho'. Você pode movê-la ou removê-la conforme necessário.
-            this.trabalhoTableAdapter.Fill(this.lojafunecDataSet3.trabalho);
+            // TODO: esta linha de código carrega dados na tabela 'lojafunecDataSet3.situacao'. Você pode movê-la ou removê-la conforme necessário.
+            this.situacaoTableAdapter.Fill(this.lojafunecDataSet3.situacao);
             reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             this.reportViewer1.RefreshReport();
         }

@@ -443,6 +443,18 @@
     <Compile Include="Views\Reports\Frm_Report_Ruas.Designer.cs">
       <DependentUpon>Frm_Report_Ruas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Sexo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Sexo.Designer.cs">
+      <DependentUpon>Frm_Report_Sexo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Situacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Situacao.Designer.cs">
+      <DependentUpon>Frm_Report_Situacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Reports\Frm_Report_Tipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -454,6 +466,12 @@
     </Compile>
     <Compile Include="Views\Reports\Frm_Report_Trabalho.Designer.cs">
       <DependentUpon>Frm_Report_Trabalho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Uf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Uf.Designer.cs">
+      <DependentUpon>Frm_Report_Uf.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Views\Dialogs\DialogBuscarVendas.resx">
       <DependentUpon>DialogBuscarVendas.cs</DependentUpon>
@@ -549,13 +567,25 @@
     <EmbeddedResource Include="Views\Reports\Frm_Report_Ruas.resx">
       <DependentUpon>Frm_Report_Ruas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Frm_Report_Sexo.resx">
+      <DependentUpon>Frm_Report_Sexo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Frm_Report_Situacao.resx">
+      <DependentUpon>Frm_Report_Situacao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Frm_Report_Tipo.resx">
       <DependentUpon>Frm_Report_Tipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Frm_Report_Trabalho.resx">
       <DependentUpon>Frm_Report_Trabalho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Frm_Report_Uf.resx">
+      <DependentUpon>Frm_Report_Uf.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\ReportVendas.rdlc" />
+    <EmbeddedResource Include="Views\Reports\Report_Situacoes.rdlc" />
+    <EmbeddedResource Include="Views\Reports\Report_Sexos.rdlc" />
+    <EmbeddedResource Include="Views\Reports\Report_Uf.rdlc" />
     <EmbeddedResource Include="Views\Reports\Report_Trabalhos.rdlc" />
     <EmbeddedResource Include="Views\Reports\Report_Tipos.rdlc" />
     <EmbeddedResource Include="Views\Reports\Report_Ruas.rdlc" />
