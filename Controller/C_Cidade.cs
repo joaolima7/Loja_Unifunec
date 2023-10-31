@@ -19,7 +19,7 @@ namespace Loja_Unifunec.Controller
         static SqlCommand cmd;
         static DataTable dtCidades;
 
-        static string sqlCarregarCidades = "select c.codcidade as CÓDIGO, c.nomecidade as CIDADE, uf.nomeuf, uf.sigla from cidade c join uf on c.coduf_fk=uf.coduf order by codcidade";
+        static string sqlCarregarCidades = "select c.codcidade as CÓDIGO, c.nomecidade as CIDADE, uf.nomeuf as ESTADO, uf.sigla as SIGLA from cidade c join uf on c.coduf_fk=uf.coduf order by codcidade";
         public static DataTable carregarCidades()
         {
             dtCidades = new DataTable();

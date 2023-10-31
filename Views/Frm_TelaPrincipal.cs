@@ -385,5 +385,28 @@ namespace Loja_Unifunec.Views
         {
             this.LayoutMdi(MdiLayout.TileHorizontal);
         }
+
+        private void cidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (C_OpenForms.IsFormOpen(typeof(Frm_Cidade)))
+            {
+                // O formulário já está aberto, traga-o para a frente
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form.GetType() == typeof(Frm_Cidade))
+                    {
+                        form.BringToFront();
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                // O formulário não está aberto, abra-o
+                Frm_Cidade novoFormulario = new Frm_Cidade();
+                novoFormulario.MdiParent = this;
+                novoFormulario.Show();
+            }
+        }
     }
 }
