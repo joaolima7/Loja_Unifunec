@@ -1,4 +1,5 @@
 ﻿using Loja_Unifunec.Conection;
+using Loja_Unifunec.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,6 +20,7 @@ namespace Loja_Unifunec.Controller
         static DataTable dtUf;
 
         static string sqlCarregarUf = "select coduf as CÓDIGO, nomeuf as UF, sigla as SIGLA from uf order by coduf";
+        static string sqlCarregarCbUf = "select * from uf order by coduf";
         static string sqlInserirUf = "insert into uf(nomeuf, sigla) values(@param, @param2)";
         static string sqlExcluirUf = "delete from uf where coduf = @param";
 
@@ -50,6 +52,46 @@ namespace Loja_Unifunec.Controller
             }
             dtUf = null;
             return dtUf;
+        }
+
+        public static List<Uf> carregarComboBoxUf()
+        {
+            List<Uf> ufs = new List<Uf>();
+            con = conection.conectaSQL();
+            cmd = new SqlCommand(sqlCarregarCbUf, con);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader reader;
+
+            con.Open();
+
+            try
+            {
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Uf uf = new Uf();
+
+                    uf.Coduf = int.Parse(reader["coduf"].ToString());
+                    uf.Nomeuf = reader["nomeuf"].ToString();
+                    uf.Sigla = reader["sigla"].ToString();
+
+                    ufs.Add(uf);
+
+                }
+                //return ufs;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            dtUf = null;
+            return ufs;
         }
 
         public static DataTable inserirUf(string nomeuf, string sigla)

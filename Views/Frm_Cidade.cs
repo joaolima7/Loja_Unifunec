@@ -1,4 +1,5 @@
 ﻿using Loja_Unifunec.Controller;
+using Loja_Unifunec.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,16 +35,26 @@ namespace Loja_Unifunec.Views
                 comboBox1.Enabled = true;
                 textBox1.Focus();
 
+                List<Uf> ufs = new List<Uf>();
+                ufs = C_Uf.carregarComboBoxUf();
+                comboBox1.DataSource = ufs;
+                comboBox1.DisplayMember = "nomeuf";
+                comboBox1.ValueMember = "coduf";
+
+
             }
             else if (button1.Text == "Salvar Cidade")
             {
+                dataGridView1.DataSource = C_Cidade.inserirCidade(textBox1.Text, comboBox1.SelectedValue.ToString());
                 button1.Text = "Adcionar Cidade";
-                button4.Enabled=true;
+                button4.Enabled = true;
                 button2.Enabled = true;
                 textBox1.Enabled = false;
                 comboBox1.Enabled = false;
                 button1.Focus();
             }
+                
+            }
         }
     }
-}
+
