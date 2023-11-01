@@ -55,6 +55,46 @@ namespace Loja_Unifunec.Views
             }
                 
             }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.CurrentRow;
+            textBox1.Text = row.Cells["CIDADE"].Value.ToString();
+            comboBox1.Text = row.Cells["ESTADO"].Value.ToString();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (button4.Text == "Excluir Cidade")
+            {
+                if (textBox1.Text != "")
+                {
+                    DataGridViewRow row = dataGridView1.CurrentRow;
+                    string cod = row.Cells["CÓDIGO"].Value.ToString();
+                    DialogResult res = MessageBox.Show("Deseja excluir a Cidade Cód. " + cod + " ?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (res == DialogResult.Yes)
+                    {
+                        dataGridView1.DataSource = C_Cidade.excluirCidade(cod);
+                        MessageBox.Show("Cidade Cód. " + cod + " Excluida com Sucesso", "ÊXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        textBox1.Text = "";
+                        comboBox1.Text= "";
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Selecione a Cidade para Excluir!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else if (button4.Text == "Cancelar")
+            {
+                button4.Text = "Excluir Cidade";
+                button2.Enabled = true;
+                textBox1.Enabled = false;
+                comboBox1.Enabled = false;
+                button1.Focus();
+
+            }
+        }
+    }
     }
 
