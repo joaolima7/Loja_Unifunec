@@ -238,6 +238,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>lojafunecDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="lojafunecDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lojafunecDataSet4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Views\Dialogs\DialogBuscarVendas.cs">
       <SubType>Form</SubType>
@@ -420,6 +425,12 @@
     <Compile Include="Views\Reports\Frm_Report_Cep.Designer.cs">
       <DependentUpon>Frm_Report_Cep.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Cidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Cidade.Designer.cs">
+      <DependentUpon>Frm_Report_Cidade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Reports\Frm_Report_Funcoes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -562,6 +573,9 @@
     <EmbeddedResource Include="Views\Reports\Frm_Report_Cep.resx">
       <DependentUpon>Frm_Report_Cep.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Frm_Report_Cidade.resx">
+      <DependentUpon>Frm_Report_Cidade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Frm_Report_Funcoes.resx">
       <DependentUpon>Frm_Report_Funcoes.cs</DependentUpon>
     </EmbeddedResource>
@@ -595,6 +609,7 @@
     <EmbeddedResource Include="Views\Reports\ReportVendas.rdlc" />
     <EmbeddedResource Include="Views\Reports\Report_Situacoes.rdlc" />
     <EmbeddedResource Include="Views\Reports\Report_Sexos.rdlc" />
+    <EmbeddedResource Include="Views\Reports\Report_Cidades.rdlc" />
     <EmbeddedResource Include="Views\Reports\Report_Uf.rdlc" />
     <EmbeddedResource Include="Views\Reports\Report_Trabalhos.rdlc" />
     <EmbeddedResource Include="Views\Reports\Report_Tipos.rdlc" />
@@ -649,6 +664,17 @@
     </None>
     <None Include="lojafunecDataSet3.xss">
       <DependentUpon>lojafunecDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="lojafunecDataSet4.xsc">
+      <DependentUpon>lojafunecDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="lojafunecDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lojafunecDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lojafunecDataSet4.xss">
+      <DependentUpon>lojafunecDataSet4.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

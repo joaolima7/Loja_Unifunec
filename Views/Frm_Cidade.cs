@@ -1,5 +1,6 @@
 ﻿using Loja_Unifunec.Controller;
 using Loja_Unifunec.Model;
+using Loja_Unifunec.Views.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -136,6 +137,12 @@ namespace Loja_Unifunec.Views
                 textBox1.Enabled = false;
                 comboBox1.Enabled = false;
             }
+        }
+
+        private void btn_imprimir_Click(object sender, EventArgs e)
+        {
+            Frm_Report_Cidade frm = new Frm_Report_Cidade();
+            frm.ShowDialog();
         }
     }
     }
