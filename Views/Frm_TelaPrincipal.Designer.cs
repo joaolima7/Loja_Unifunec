@@ -230,6 +230,7 @@
             this.loginsToolStripMenuItem.Name = "loginsToolStripMenuItem";
             this.loginsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loginsToolStripMenuItem.Text = "Logins";
+            this.loginsToolStripMenuItem.Click += new System.EventHandler(this.loginsToolStripMenuItem_Click);
             // 
             // logDeLoginsToolStripMenuItem
             // 

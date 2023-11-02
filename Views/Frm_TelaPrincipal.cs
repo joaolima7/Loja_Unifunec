@@ -432,5 +432,28 @@ namespace Loja_Unifunec.Views
                 novoFormulario.Show();
             }
         }
+
+        private void loginsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (C_OpenForms.IsFormOpen(typeof(Frm_Cad_Login)))
+            {
+                // O formulário já está aberto, traga-o para a frente
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form.GetType() == typeof(Frm_Cad_Login))
+                    {
+                        form.BringToFront();
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                // O formulário não está aberto, abra-o
+                Frm_Cad_Login novoFormulario = new Frm_Cad_Login();
+                novoFormulario.MdiParent = this;
+                novoFormulario.Show();
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Loja_Unifunec.Conection;
+using Loja_Unifunec.Model;
 using Loja_Unifunec.Views;
 using System;
 using System.Collections.Generic;
@@ -13,11 +14,14 @@ namespace Loja_Unifunec.Controller
 {
     internal class C_Login
     {
-
-        SqlConnection con;
-        SqlCommand cmd;
+         Conexao conection = new Conexao();
+         SqlConnection con;
+         SqlCommand cmd;
+         DataTable dtLogins;
 
         string sqlBuscarLogin = "select * from login where usuario = @User and senha = @Password";
+        string sqlInserirLogin = "insert into login(usuario, senha, codfuncionario_fk) values(@param, @param2, @param3)";
+        string sqlCarregarLogin = "select l.codlogin as CÓDIGO, l.usuario as USUÁRIO, l.senha as SENHA, f.nomefuncionario as FUNCIONÁRIO from login l join funcionario f on f.codfuncionario=l.codfuncionario_fk order by l.codlogin";
         string sqlBuscarFunc = "select * from funcionario where codfuncionario = @codfunc";
 
         public void buscarLogin(string usuario, string senha)
@@ -60,5 +64,72 @@ namespace Loja_Unifunec.Controller
                 
             }
         }
+
+
+        public DataTable carregarLogins()
+        {
+            dtLogins = new DataTable();
+            con = conection.conectaSQL();
+            cmd = new SqlCommand(sqlCarregarLogin, con);
+            cmd.CommandType = CommandType.Text;
+
+            con.Open();
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dtLogins);
+                return dtLogins;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            dtLogins = null;
+            return dtLogins;
+        }
+
+        public DataTable inserirLogin(string usuario, string senha, string codfuncionario)
+        {
+            dtLogins = new DataTable();
+            con = conection.conectaSQL();
+            cmd = new SqlCommand(sqlInserirLogin, con);
+            cmd.Parameters.AddWithValue("@param", usuario);
+            cmd.Parameters.AddWithValue("@param2", senha);
+            cmd.Parameters.AddWithValue("@param3", int.Parse(codfuncionario));
+            cmd.CommandType = CommandType.Text;
+
+            con.Open();
+
+            try
+            {
+
+                cmd.ExecuteNonQuery();
+
+                cmd.CommandText = sqlCarregarLogin;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dtLogins);
+                return dtLogins;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            dtLogins = null;
+            return dtLogins;
+        }
+
     }
 }

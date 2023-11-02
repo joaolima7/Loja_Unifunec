@@ -20,6 +20,7 @@ namespace Loja_Unifunec.Controller
 
         static string sqlCarregarTelef = "select t.codtelefone as CÓDIGO, t.numero as NUMERO, o.nomeoperadora as OPERADORA from telefone t join operadora o on t.codoperadora_fk=o.codoperadora order by t.codtelefone";
         static string sqlInserirTelef = "insert into telefone(numero, codoperadora_fk) values(@param, @param2)";
+        static string sqlExcluirTelef = "delete from telefone where codtelefone = @param";
 
         public static DataTable carregarTelef()
         {
@@ -84,6 +85,38 @@ namespace Loja_Unifunec.Controller
             return dtTelef;
         }
 
+        public static DataTable excluirTelef(string codtelef)
+        {
+            dtTelef = new DataTable();
+            con = conection.conectaSQL();
+            cmd = new SqlCommand(sqlExcluirTelef, con);
+            cmd.Parameters.AddWithValue("@param", int.Parse(codtelef));
+            cmd.CommandType = CommandType.Text;
+
+            con.Open();
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+
+                cmd.CommandText = sqlCarregarTelef;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dtTelef);
+                return dtTelef;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            dtTelef = null;
+            return dtTelef;
+        }
 
     }
 }
