@@ -210,10 +210,12 @@
     <Compile Include="Controller\C_Loja.cs" />
     <Compile Include="Controller\C_Marca.cs" />
     <Compile Include="Controller\C_OpenForms.cs" />
+    <Compile Include="Controller\C_Operadora.cs" />
     <Compile Include="Controller\C_Produtos.cs" />
     <Compile Include="Controller\C_Rua.cs" />
     <Compile Include="Controller\C_Sexo.cs" />
     <Compile Include="Controller\C_Situacao.cs" />
+    <Compile Include="Controller\C_Telefone.cs" />
     <Compile Include="Controller\C_Tipo.cs" />
     <Compile Include="Controller\C_Trabalho.cs" />
     <Compile Include="Controller\C_Uf.cs" />
@@ -491,6 +493,12 @@
     <Compile Include="Views\Reports\Frm_Report_Uf.Designer.cs">
       <DependentUpon>Frm_Report_Uf.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reports\Frm_Telefones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Frm_Telefones.Designer.cs">
+      <DependentUpon>Frm_Telefones.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\Dialogs\DialogBuscarVendas.resx">
       <DependentUpon>DialogBuscarVendas.cs</DependentUpon>
     </EmbeddedResource>
@@ -605,6 +613,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Frm_Report_Uf.resx">
       <DependentUpon>Frm_Report_Uf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Frm_Telefones.resx">
+      <DependentUpon>Frm_Telefones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\ReportVendas.rdlc" />
     <EmbeddedResource Include="Views\Reports\Report_Situacoes.rdlc" />

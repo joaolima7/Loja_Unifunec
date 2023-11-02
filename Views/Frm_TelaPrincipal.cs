@@ -1,4 +1,5 @@
 ﻿using Loja_Unifunec.Controller;
+using Loja_Unifunec.Views.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -404,6 +405,29 @@ namespace Loja_Unifunec.Views
             {
                 // O formulário não está aberto, abra-o
                 Frm_Cidade novoFormulario = new Frm_Cidade();
+                novoFormulario.MdiParent = this;
+                novoFormulario.Show();
+            }
+        }
+
+        private void telefonesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (C_OpenForms.IsFormOpen(typeof(Frm_Telefones)))
+            {
+                // O formulário já está aberto, traga-o para a frente
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form.GetType() == typeof(Frm_Telefones))
+                    {
+                        form.BringToFront();
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                // O formulário não está aberto, abra-o
+                Frm_Telefones novoFormulario = new Frm_Telefones();
                 novoFormulario.MdiParent = this;
                 novoFormulario.Show();
             }
