@@ -44,8 +44,10 @@ namespace Loja_Unifunec.Controller
                 {
                     reader.Read();
                     string codfunc = reader["codfuncionario_fk"].ToString();
+                    string codlogin = reader["codlogin"].ToString();
                     string nomeuser = reader["usuario"].ToString();
                     Frm_TelaPrincipal tela = new Frm_TelaPrincipal(nomeuser, codfunc);
+                    C_ControleLogs.inserirLog(codlogin,"LOGIN NO SISTEMA");
                     reader.Close();
                     tela.Show();
                 }

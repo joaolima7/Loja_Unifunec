@@ -205,6 +205,7 @@
     <Compile Include="Controller\C_Cep.cs" />
     <Compile Include="Controller\C_Cidade.cs" />
     <Compile Include="Controller\C_Cliente.cs" />
+    <Compile Include="Controller\C_ControleLogs.cs" />
     <Compile Include="Controller\C_Funcao.cs" />
     <Compile Include="Controller\C_Funcionario.cs" />
     <Compile Include="Controller\C_Login.cs" />
@@ -349,6 +350,12 @@
     </Compile>
     <Compile Include="Views\Frm_Funcoes.Designer.cs">
       <DependentUpon>Frm_Funcoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Frm_logs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Frm_logs.Designer.cs">
+      <DependentUpon>Frm_logs.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Frm_Loja.cs">
       <SubType>Form</SubType>
@@ -548,6 +555,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_Funcoes.resx">
       <DependentUpon>Frm_Funcoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Frm_logs.resx">
+      <DependentUpon>Frm_logs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_Loja.resx">
       <DependentUpon>Frm_Loja.cs</DependentUpon>
