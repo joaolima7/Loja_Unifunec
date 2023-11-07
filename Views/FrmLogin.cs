@@ -30,8 +30,7 @@ namespace Loja_Unifunec
 
         private void button1_Click(object sender, EventArgs e)
         {
-            C_Login login = new C_Login();
-            login.buscarLogin(tb_login.Text, tb_senha.Text);
+            C_Login.buscarLogin(tb_login.Text, tb_senha.Text);
             this.Hide();
         }
 

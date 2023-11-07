@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Loja_Unifunec.Model
 {
-    internal class Sexo
+    public class Sexo
     {
         public int Codsexo { get; set; }
         public string Nomesexo { get; set; }
