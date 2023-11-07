@@ -738,6 +738,20 @@
     <None Include="Resources\botao-de-interface-de-opcao-de-visualizacao-em-cascata.png" />
     <None Include="Resources\livros-da-biblioteca-ou-quatro-linhas-verticais.png" />
     <None Include="Resources\espaco-de-trabalho-com-duas-janelas-horizontais.png" />
+    <None Include="Resources\controle-de-acesso.png" />
+    <None Include="Resources\cidade.png" />
+    <None Include="Resources\cidade1.png" />
+    <None Include="Resources\pin-de-localizacao.png" />
+    <None Include="Resources\parcela %282%29.png" />
+    <None Include="Resources\passar.png" />
+    <None Include="Resources\equipe %282%29.png" />
+    <None Include="Resources\loja.png" />
+    <None Include="Resources\registrado.png" />
+    <None Include="Resources\operador-de-telemarketing.png" />
+    <None Include="Resources\vista-superior-em-linha-reta-da-estrada.png" />
+    <None Include="Resources\telefone.png" />
+    <None Include="Resources\genero.png" />
+    <None Include="Resources\homem.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

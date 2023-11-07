@@ -118,28 +118,70 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="configuracoes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\configuracoes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imprimir (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imprimir (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logoU-azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoU-azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="unifunec-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\unifunec-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="botao-de-interface-de-opcao-de-visualizacao-em-cascata" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\botao-de-interface-de-opcao-de-visualizacao-em-cascata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="livros-da-biblioteca-ou-quatro-linhas-verticais" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\livros-da-biblioteca-ou-quatro-linhas-verticais.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="operador-de-telemarketing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\operador-de-telemarketing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imprimir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imprimir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cidade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cidade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="telefone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\telefone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pin-de-localizacao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pin-de-localizacao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logoU-azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoU-azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="genero" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\genero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="registrado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\registrado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cidade1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cidade1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="passar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\passar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="espaco-de-trabalho-com-duas-janelas-horizontais" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\espaco-de-trabalho-com-duas-janelas-horizontais.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vista-superior-em-linha-reta-da-estrada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vista-superior-em-linha-reta-da-estrada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="configuracoes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\configuracoes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loja" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imprimir (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imprimir (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="parcela (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\parcela (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="livros-da-biblioteca-ou-quatro-linhas-verticais" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\livros-da-biblioteca-ou-quatro-linhas-verticais.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unifunec-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unifunec-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="controle-de-acesso" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\controle-de-acesso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="equipe (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\equipe (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="botao-de-interface-de-opcao-de-visualizacao-em-cascata" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\botao-de-interface-de-opcao-de-visualizacao-em-cascata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="homem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\homem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
