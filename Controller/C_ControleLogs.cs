@@ -53,7 +53,7 @@ namespace Loja_Unifunec.Controller
         public static void inserirLog(string codlogin, string descricao)
         {
             con = conection.conectaSQL();
-            cmd = new SqlCommand(sqlCarregarLogs, con);
+            cmd = new SqlCommand(sqlInserirLogs, con);
             cmd.Parameters.AddWithValue("@param", codlogin);
             cmd.Parameters.AddWithValue("@param2", descricao);
             cmd.CommandType = CommandType.Text;

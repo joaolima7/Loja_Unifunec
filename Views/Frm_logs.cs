@@ -22,5 +22,20 @@ namespace Loja_Unifunec.Views
         {
             dataGridView1.DataSource = C_ControleLogs.carregarLogs();
         }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            {
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "HORA")
+                {
+                    if (e.Value != null && e.Value is TimeSpan)
+                    {
+                        e.Value = ((TimeSpan)e.Value).ToString("hh\\:mm\\:ss");
+                        e.FormattingApplied = true;
+                    }
+                }
+            }
+        }
     }
 }

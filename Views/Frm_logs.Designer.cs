@@ -62,6 +62,7 @@
             this.dataGridView1.ShowRowErrors = false;
             this.dataGridView1.Size = new System.Drawing.Size(687, 400);
             this.dataGridView1.TabIndex = 38;
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
             // btn_imprimir
             // 
