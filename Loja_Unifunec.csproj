@@ -752,6 +752,14 @@
     <None Include="Resources\telefone.png" />
     <None Include="Resources\genero.png" />
     <None Include="Resources\homem.png" />
+    <None Include="Resources\galeria-de-imagens.png" />
+    <None Include="Resources\arquivo-de-log.png" />
+    <None Include="Resources\novo-arquivo.png" />
+    <None Include="Resources\novo-arquivo1.png" />
+    <None Include="Resources\caixa %281%29.png" />
+    <None Include="Resources\carrinho %281%29.png" />
+    <None Include="Resources\bolsa-de-compras.png" />
+    <None Include="Resources\botao-de-roda-dentada-de-configuracoes.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

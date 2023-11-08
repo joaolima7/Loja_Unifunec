@@ -63,9 +63,59 @@ namespace Loja_Unifunec.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arquivo_de_log {
+            get {
+                object obj = ResourceManager.GetObject("arquivo-de-log", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bolsa_de_compras {
+            get {
+                object obj = ResourceManager.GetObject("bolsa-de-compras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap botao_de_interface_de_opcao_de_visualizacao_em_cascata {
             get {
                 object obj = ResourceManager.GetObject("botao-de-interface-de-opcao-de-visualizacao-em-cascata", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap botao_de_roda_dentada_de_configuracoes {
+            get {
+                object obj = ResourceManager.GetObject("botao-de-roda-dentada-de-configuracoes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap caixa__1_ {
+            get {
+                object obj = ResourceManager.GetObject("caixa (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carrinho__1_ {
+            get {
+                object obj = ResourceManager.GetObject("carrinho (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +176,16 @@ namespace Loja_Unifunec.Properties {
         internal static System.Drawing.Bitmap espaco_de_trabalho_com_duas_janelas_horizontais {
             get {
                 object obj = ResourceManager.GetObject("espaco-de-trabalho-com-duas-janelas-horizontais", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap galeria_de_imagens {
+            get {
+                object obj = ResourceManager.GetObject("galeria-de-imagens", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +256,26 @@ namespace Loja_Unifunec.Properties {
         internal static System.Drawing.Bitmap loja {
             get {
                 object obj = ResourceManager.GetObject("loja", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap novo_arquivo {
+            get {
+                object obj = ResourceManager.GetObject("novo-arquivo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap novo_arquivo1 {
+            get {
+                object obj = ResourceManager.GetObject("novo-arquivo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
