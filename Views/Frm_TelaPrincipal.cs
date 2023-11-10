@@ -455,6 +455,8 @@ namespace Loja_Unifunec.Views
                 novoFormulario.Show();
             }
         }
+        
+
 
         private void logDeLoginsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -474,6 +476,29 @@ namespace Loja_Unifunec.Views
             {
                 // O formulário não está aberto, abra-o
                 Frm_logs novoFormulario = new Frm_logs();
+                novoFormulario.MdiParent = this;
+                novoFormulario.Show();
+            }
+        }
+
+        private void fornecedoresToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (C_OpenForms.IsFormOpen(typeof(Frm_Fornecedores)))
+            {
+                // O formulário já está aberto, traga-o para a frente
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form.GetType() == typeof(Frm_Fornecedores))
+                    {
+                        form.BringToFront();
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                // O formulário não está aberto, abra-o
+                Frm_Fornecedores novoFormulario = new Frm_Fornecedores();
                 novoFormulario.MdiParent = this;
                 novoFormulario.Show();
             }
