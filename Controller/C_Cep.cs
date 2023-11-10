@@ -1,4 +1,5 @@
 ﻿using Loja_Unifunec.Conection;
+using Loja_Unifunec.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,6 +20,7 @@ namespace Loja_Unifunec.Controller
         static DataTable dtCep;
 
         static string sqlCarregarCep = "select codcep as CÓDIGO, numerocep as CEP from cep order by codcep";
+        static string sqlCarregarCepCb = "select * from cep order by codcep";
         static string sqlInserirCep = "insert into cep(numerocep) values(@param)";
         static string sqlExcluirCep = "delete from cep where codcep = @param";
 
@@ -119,6 +121,47 @@ namespace Loja_Unifunec.Controller
             dtCep = null;
             return dtCep;
         }
+
+        public static List<Cep> carregarComboBoxCep()
+        {
+            List<Cep> ceps = new List<Cep>();
+            con = conection.conectaSQL();
+            cmd = new SqlCommand(sqlCarregarCepCb, con);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader reader;
+
+            con.Open();
+
+            try
+            {
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Cep cep = new Cep();
+
+                    cep.Codcep = int.Parse(reader["codcep"].ToString());
+                    cep.Numerocep = reader["numerocep"].ToString();
+
+                    ceps.Add(cep);
+
+                }
+                return ceps;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            ceps = null;
+            return ceps;
+        }
+
+
 
     }
 }

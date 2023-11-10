@@ -35,10 +35,25 @@ namespace Loja_Unifunec.Views
                 List<Cidade> cdds = new List<Cidade>();
 
                 ruas = C_Rua.carregarComboBoxRua();
+                bairros = C_Bairro.carregarComboBoxBairro();
+                ceps = C_Cep.carregarComboBoxCep();
+                cdds = C_Cidade.carregarComboBoxCidade();
 
                 comboBox1.DataSource = ruas;
                 comboBox1.ValueMember = "codrua";
                 comboBox1.DisplayMember = "nomerua";
+
+                comboBox2.DataSource = bairros;
+                comboBox2.ValueMember = "codbairro";
+                comboBox2.DisplayMember = "nomebairro";
+
+                comboBox3.DataSource = ceps;
+                comboBox3.ValueMember = "codcep";
+                comboBox3.DisplayMember = "numerocep";
+
+                comboBox4.DataSource = cdds;
+                comboBox4.ValueMember = "codcidade";
+                comboBox4.DisplayMember = "nomecidade";
 
 
                 textBox1.Text = "";
@@ -55,6 +70,7 @@ namespace Loja_Unifunec.Views
                 comboBox2.Enabled = true;
                 comboBox3.Enabled = true;
                 comboBox4.Enabled = true;
+                dataGridView1.Enabled = false;
                 textBox1.Focus();
             }
             else if (button1.Text == "Salvar Fornecedor")
@@ -62,6 +78,10 @@ namespace Loja_Unifunec.Views
                 if (textBox1.Text != "" && textBox3.Text != "")
                 {
                     Fornecedor forn = new Fornecedor();
+                    forn.Cep = new Cep();
+                    forn.Cidade = new Cidade();
+                    forn.Bairro = new Bairro();
+                    forn.Rua = new Rua();
                     forn.Nomefornecedor = textBox1.Text;
                     forn.Numerocasa = int.Parse(textBox3.Text);
                     forn.Rua.Codrua = int.Parse(comboBox1.SelectedValue.ToString());
@@ -80,12 +100,44 @@ namespace Loja_Unifunec.Views
                 comboBox2.Enabled = false;
                 comboBox3.Enabled = false;
                 comboBox4.Enabled = false;
+                dataGridView1.Enabled = true;
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            if (button4.Text == "Excluir Fornecedor")
+            {
+                if (textBox1.Text != "")
+                {
+                    DataGridViewRow row = dataGridView1.CurrentRow;
+                    string cod = row.Cells["CÓDIGO"].Value.ToString();
+                    DialogResult res = MessageBox.Show("Deseja excluir o Fornecedor Cód. " + cod + " ?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (res == DialogResult.Yes)
+                    {
+                        dataGridView1.DataSource = C_Fornecedor.excluirFornecedor(cod);
+                        MessageBox.Show("Fornecedor Cód. " + cod + " Excluida com Sucesso", "ÊXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        textBox1.Text = "";
+                        textBox3.Text = "";
+                        comboBox1.Text = "";
+                        comboBox2.Text = "";
+                        comboBox3.Text = "";
+                        comboBox4.Text = "";
+                    }
+                }
+            }
+            else if (button4.Text == "Cancelar")
+            {
+                button1.Text = "Adcionar Fornecedor";
+                button4.Text = "Excluir Fornecedor";
+                textBox1.Enabled = false;
+                comboBox1.Enabled = false;
+                textBox3.Enabled = false;
+                comboBox2.Enabled = false;
+                comboBox3.Enabled = false;
+                comboBox4.Enabled = false;
+                dataGridView1.Enabled = true;
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

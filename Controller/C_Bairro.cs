@@ -21,6 +21,7 @@ namespace Loja_Unifunec.Controller
 
         static string sqlCarregarBairro = "select codbairro as CÓDIGO, nomebairro as BAIRRO from bairro order by codbairro";
         static string sqlInserirBairro = "insert into bairro(nomebairro) values(@param)";
+        static string sqlCarregarBairroCb = "select * from bairro order by nomebairro";
         static string sqlExcluirBairro = "delete from bairro where codbairro = @param";
 
         public static DataTable carregarBairros()
@@ -119,6 +120,47 @@ namespace Loja_Unifunec.Controller
             dtBairros = null;
             return dtBairros;
         }
+
+        public static List<Bairro> carregarComboBoxBairro()
+        {
+            List<Bairro> bairros = new List<Bairro>();
+            con = conection.conectaSQL();
+            cmd = new SqlCommand(sqlCarregarBairroCb, con);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader reader;
+
+            con.Open();
+
+            try
+            {
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Bairro bairro = new Bairro();
+
+                    bairro.Codbairro = int.Parse(reader["codbairro"].ToString());
+                    bairro.Nomebairro = reader["nomebairro"].ToString();
+
+                    bairros.Add(bairro);
+
+                }
+                return bairros;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            bairros = null;
+            return bairros;
+        }
+
+
 
     }
 }
