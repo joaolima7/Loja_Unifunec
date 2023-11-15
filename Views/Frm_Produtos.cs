@@ -77,17 +77,74 @@ namespace Loja_Unifunec.Views
         {
             if (button4.Text == "Excluir Produto")
             {
-
+                if (textBox1.Text != "")
+                {
+                    DataGridViewRow row = dataGridView1.CurrentRow;
+                    string cod = row.Cells["CÓDIGO"].Value.ToString();
+                    DialogResult res = MessageBox.Show("Deseja ecluir o Produto Cód. " + cod + " ?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (res == DialogResult.Yes)
+                    {
+                        dataGridView1.DataSource = C_Produtos.excluirProduto(cod);
+                        MessageBox.Show("Produto Cód. " + cod + " Excluido com Sucesso", "ÊXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Selecione o Produto para Excluir!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             else if (button4.Text == "Cancelar")
             {
-
+                textBox1.Enabled = false;
+                textBox2.Enabled = false;
+                textBox3.Enabled = false;
+                comboBox1.Enabled = false;
+                comboBox2.Enabled = false;
+                textBox1.Text = string.Empty;
+                textBox2.Text = string.Empty;
+                textBox3.Text = string.Empty;
+                comboBox1.Text = string.Empty;
+                comboBox2.Text = string.Empty;
+                comboBox1.DataSource = null;
+                comboBox2.DataSource = null;
+                button1.Text = "Adicionar Produto";
+                button4.Text = "Excluir Produto";
+                button2.Enabled = true;
+                button1.Focus();
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (button2.Text == "Editar Produto")
+            {
+                if (textBox1.Text != "")
+                {
+                    button2.Text = "Salvar Edição";
+                    textBox1.Enabled = true;
+                    textBox2.Enabled = true;
+                    textBox3.Enabled = true;
+                    comboBox1.Enabled = true;
+                    comboBox2.Enabled = true;
+                    dataGridView1.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um Produto para Editar!","ATENÇÃO",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }
+            }
+            else if (button2.Text == "Salvar Edição")
+            {
+                dataGridView1.DataSource = null;
+                button2.Text = "Editar Produto";
+                textBox1.Enabled = false;
+                textBox2.Enabled = false;
+                textBox3.Enabled = false;
+                comboBox1.Enabled = false;
+                comboBox2.Enabled = false;
+                dataGridView1.Enabled = true;
 
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

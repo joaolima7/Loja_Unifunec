@@ -21,8 +21,10 @@ namespace Loja_Unifunec.Controller
             "p.valor as VALOR, m.nomemarca as MARCA, t.nometipo as TIPO from produto p join marca m on m.codmarca = p.codmarca_fk join tipo t" +
             " on t.codtipo = p.codtipo_fk order by p.codproduto";
         static string sqlConsultaEstoque = "select quantidade from produto where codproduto = @param";
+        static string sqlExcluirProd = "delete from produto where codproduto = @param";
         static string sqlInserirProdutos = "insert into produto(nomeproduto, quantidade, valor, codmarca_fk, codtipo_fk) values(@p1, @p2, @p3, @p4, @p5)";
         static string sqlBaixaEstoque = "update produto set quantidade = quantidade - @quant where codproduto = @codprod";
+        static string sqlEditarProd = "update produto set nomeproduto = @p1, quantidade = @p2, valor = @p3, codmarca_fk = @p4, codtipo_fk = @p5 where codproduto = @codprod";
 
         public static DataTable carregarProdutos()
         {
@@ -153,6 +155,85 @@ namespace Loja_Unifunec.Controller
             dataTableProdutos = null;
             return dataTableProdutos;
         }
+
+        public static DataTable excluirProduto(string codproduto)
+        {
+            Conexao conection = new Conexao();
+            dataTableProdutos = new DataTable();
+            con = conection.conectaSQL();
+            cmd = new SqlCommand(sqlExcluirProd, con);
+            cmd.Parameters.AddWithValue("@param", int.Parse(codproduto));
+            cmd.CommandType = CommandType.Text;
+
+            con.Open();
+
+            try
+            {
+
+                cmd.ExecuteNonQuery();
+
+                cmd.CommandText = sqlCarregarProdutos;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dataTableProdutos);
+                return dataTableProdutos;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            dataTableProdutos = null;
+            return dataTableProdutos;
+        }
+
+        public static DataTable editarProduto(object obj)
+        {
+            Conexao conection = new Conexao();
+            Produto prod = new Produto();
+            prod = (Produto)obj;
+            dataTableProdutos = new DataTable();
+            con = conection.conectaSQL();
+            cmd = new SqlCommand(sqlEditarProd, con);
+            cmd.Parameters.AddWithValue("@p1", prod.Nomeproduto);
+            cmd.Parameters.AddWithValue("@p2", prod.Quantidade);
+            cmd.Parameters.AddWithValue("@p3", prod.Valor);
+            cmd.Parameters.AddWithValue("@p4", prod.Marca.Codmarca);
+            cmd.Parameters.AddWithValue("@p5", prod.Tipo.Codtipo);
+            cmd.Parameters.AddWithValue("@codprod", prod.Codproduto);
+            cmd.CommandType = CommandType.Text;
+
+            con.Open();
+
+            try
+            {
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Produto inserido com Sucesso!", "ÊXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                cmd.CommandText = sqlCarregarProdutos;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dataTableProdutos);
+                return dataTableProdutos;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            dataTableProdutos = null;
+            return dataTableProdutos;
+        }
+
 
     }
 }
