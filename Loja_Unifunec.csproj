@@ -388,6 +388,12 @@
     <Compile Include="Views\Frm_Operadoras.Designer.cs">
       <DependentUpon>Frm_Operadoras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Frm_Produtos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Frm_Produtos.Designer.cs">
+      <DependentUpon>Frm_Produtos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Frm_Rua.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -583,6 +589,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_Operadoras.resx">
       <DependentUpon>Frm_Operadoras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Frm_Produtos.resx">
+      <DependentUpon>Frm_Produtos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_Rua.resx">
       <DependentUpon>Frm_Rua.cs</DependentUpon>

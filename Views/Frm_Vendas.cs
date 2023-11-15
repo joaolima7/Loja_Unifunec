@@ -198,13 +198,12 @@ namespace Loja_Unifunec.Views
             {
                 if (textBox3.Text != "" && textBox4.Text != "")
                 {
-                    C_Produtos c_Produtos = new C_Produtos();
-                    decimal estoque = c_Produtos.verificaEstoque(codprod);
+                    decimal estoque = C_Produtos.verificaEstoque(codprod);
                     if (estoque >= int.Parse(textBox4.Text))
                     {
                         DataTable dt = new DataTable();
                         dt = c_Vendas.insereVendaProduto(codvenda, codprod, textBox4.Text, label8.Text);
-                        c_Produtos.baixaEstoque(codprod,textBox4.Text);
+                        C_Produtos.baixaEstoque(codprod,textBox4.Text);
                         if (dt != null)
                         {
                             dataGridView1.DataSource = dt;

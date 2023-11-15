@@ -1,4 +1,5 @@
 ﻿using Loja_Unifunec.Conection;
+using Loja_Unifunec.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,6 +21,7 @@ namespace Loja_Unifunec.Controller
 
         static string sqlCarregarTipo = "select codtipo as CÓDIGO, nometipo as TIPO from tipo order by codtipo";
         static string sqlInserirTipo = "insert into tipo(nometipo) values(@param)";
+        static string sqlCarregarTipoCb = "select * from tipo order by nometipo";
         static string sqlExcluirTipo = "delete from tipo where codtipo = @param";
 
 
@@ -118,6 +120,45 @@ namespace Loja_Unifunec.Controller
             }
             dtTipo = null;
             return dtTipo;
+        }
+
+
+        public static List<Tipo> carregarComboBoxTipo()
+        {
+            List<Tipo> tipos = new List<Tipo>();
+            con = conection.conectaSQL();
+            cmd = new SqlCommand(sqlCarregarTipoCb, con);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader reader;
+
+            con.Open();
+
+            try
+            {
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Tipo t = new Tipo();
+
+                    t.Codtipo = int.Parse(reader["codtipo"].ToString());
+                    t.Nometipo = reader["nometipo"].ToString();
+
+                    tipos.Add(t);
+
+                }
+                return tipos;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return tipos;
         }
 
     }

@@ -21,6 +21,7 @@ namespace Loja_Unifunec.Controller
 
         static string sqlCarregarMarca = "select codmarca as CÓDIGO, nomemarca as MARCA from marca order by codmarca";
         static string sqlInserirMarca = "insert into marca(nomemarca) values(@param)";
+        static string sqlBuscarMarcaCb = "select * from marca order by nomemarca";
         static string sqlExcluirMarca = "delete from marca where codmarca = @param";
 
 
@@ -51,6 +52,44 @@ namespace Loja_Unifunec.Controller
             }
             dtMarca = null;
             return dtMarca;
+        }
+
+        public static List<Marca> carregarComboBoxMarca()
+        {
+            List<Marca> marcas = new List<Marca>();
+            con = conection.conectaSQL();
+            cmd = new SqlCommand(sqlBuscarMarcaCb, con);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader reader;
+
+            con.Open();
+
+            try
+            {
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Marca m = new Marca();
+
+                    m.Codmarca = int.Parse(reader["codmarca"].ToString());
+                    m.Nomemarca = reader["nomemarca"].ToString();
+
+                    marcas.Add(m);
+
+                }
+                return marcas;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return marcas;
         }
 
         public static DataTable inserirMarca(string nomemarca)

@@ -13,7 +13,7 @@ namespace Loja_Unifunec.Views.Dialogs
 {
     public partial class DialogExibirProdutos : Form
     {
-        C_Produtos c_Produtos = new C_Produtos();
+        
         Frm_Vendas frm_vendas;
         public DialogExibirProdutos(Frm_Vendas frm)
         {
@@ -24,7 +24,7 @@ namespace Loja_Unifunec.Views.Dialogs
         private void DialogExibirProdutos_Load(object sender, EventArgs e)
         {
             DataTable tb = new DataTable();
-            tb = c_Produtos.carregarProdutos();
+            tb = C_Produtos.carregarProdutos();
             if (tb.Rows.Count > 0)
             {
                 dataGridView1.DataSource = tb;
