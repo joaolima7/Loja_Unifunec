@@ -20,6 +20,9 @@ namespace Loja_Unifunec.Controller
         static string sqlCarregarProdutos = "select p.codproduto as CÓDIGO, p.nomeproduto as PRODUTO, p.quantidade as ESTOQUE," +
             "p.valor as VALOR, m.nomemarca as MARCA, t.nometipo as TIPO from produto p join marca m on m.codmarca = p.codmarca_fk join tipo t" +
             " on t.codtipo = p.codtipo_fk order by p.codproduto";
+        static string sqlPesquisaRealTime = "select p.codproduto as CÓDIGO, p.nomeproduto as PRODUTO, p.quantidade as ESTOQUE," +
+            "p.valor as VALOR, m.nomemarca as MARCA, t.nometipo as TIPO from produto p join marca m on m.codmarca = p.codmarca_fk join tipo t" +
+            " on t.codtipo = p.codtipo_fk where p.nomeproduto like @p1 order by p.codproduto";
         static string sqlConsultaEstoque = "select quantidade from produto where codproduto = @param";
         static string sqlExcluirProd = "delete from produto where codproduto = @param";
         static string sqlInserirProdutos = "insert into produto(nomeproduto, quantidade, valor, codmarca_fk, codtipo_fk) values(@p1, @p2, @p3, @p4, @p5)";
@@ -204,7 +207,7 @@ namespace Loja_Unifunec.Controller
             cmd.Parameters.AddWithValue("@p3", prod.Valor);
             cmd.Parameters.AddWithValue("@p4", prod.Marca.Codmarca);
             cmd.Parameters.AddWithValue("@p5", prod.Tipo.Codtipo);
-            cmd.Parameters.AddWithValue("@codprod", prod.Codproduto);
+            cmd.Parameters.AddWithValue("@codprod", prod.Codproduto );
             cmd.CommandType = CommandType.Text;
 
             con.Open();
@@ -213,7 +216,6 @@ namespace Loja_Unifunec.Controller
             {
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Produto inserido com Sucesso!", "ÊXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 cmd.CommandText = sqlCarregarProdutos;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -234,6 +236,35 @@ namespace Loja_Unifunec.Controller
             return dataTableProdutos;
         }
 
+        public static DataTable pesquisaRealTime(string nomeprod)
+        {
+            Conexao conexao = new Conexao();
+            con = conexao.conectaSQL();
+            dataTableProdutos = new DataTable();
+
+            cmd = new SqlCommand(sqlPesquisaRealTime, con);
+            cmd.Parameters.AddWithValue("@p1", "%" + nomeprod + "%");
+            cmd.CommandType = CommandType.Text;
+
+            con.Open();
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dataTableProdutos); // Carregar dados diretamente no DataTable
+                return dataTableProdutos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro com o Banco de Dados\n" + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return dataTableProdutos;
+        }
 
     }
 }

@@ -41,6 +41,7 @@ namespace Loja_Unifunec.Views
                 button1.Text = "Salvar Produto";
                 button4.Text = "Cancelar";
                 button2.Enabled = false;
+                dataGridView1.Enabled = false;
                 textBox1.Focus();
 
                 comboBox1.DataSource = C_Marca.carregarComboBoxMarca();
@@ -52,6 +53,7 @@ namespace Loja_Unifunec.Views
             }
             else if (button1.Text == "Salvar Produto")
             {
+                dataGridView1.Enabled = true;
                 Produto prod = new Produto();
                 prod.Marca = new Marca();
                 prod.Tipo = new Tipo();
@@ -110,22 +112,32 @@ namespace Loja_Unifunec.Views
                 button1.Text = "Adicionar Produto";
                 button4.Text = "Excluir Produto";
                 button2.Enabled = true;
+                dataGridView1.Enabled = true;
                 button1.Focus();
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            DataGridViewRow row = dataGridView1.CurrentRow;
             if (button2.Text == "Editar Produto")
             {
                 if (textBox1.Text != "")
                 {
                     button2.Text = "Salvar Edição";
+                    button4.Text = "Cancelar";
                     textBox1.Enabled = true;
                     textBox2.Enabled = true;
                     textBox3.Enabled = true;
                     comboBox1.Enabled = true;
                     comboBox2.Enabled = true;
+                    dataGridView1.Enabled = false;
+                    comboBox1.DataSource = C_Marca.carregarComboBoxMarca();
+                    comboBox1.ValueMember = "codmarca";
+                    comboBox1.DisplayMember = "nomemarca";
+                    comboBox2.DataSource = C_Tipo.carregarComboBoxTipo();
+                    comboBox2.ValueMember = "codtipo";
+                    comboBox2.DisplayMember = "nometipo";
                     dataGridView1.Enabled = false;
                 }
                 else
@@ -135,7 +147,16 @@ namespace Loja_Unifunec.Views
             }
             else if (button2.Text == "Salvar Edição")
             {
-                dataGridView1.DataSource = null;
+                Produto prod = new Produto();
+                prod.Marca = new Marca();
+                prod.Tipo = new Tipo();
+                prod.Tipo.Codtipo = int.Parse(comboBox2.SelectedValue.ToString());
+                prod.Marca.Codmarca = int.Parse(comboBox1.SelectedValue.ToString());
+                prod.Nomeproduto = textBox1.Text;
+                prod.Quantidade = double.Parse(textBox2.Text);
+                prod.Valor = double.Parse(textBox3.Text);
+                prod.Codproduto = int.Parse(row.Cells["CÓDIGO"].Value.ToString());
+                dataGridView1.DataSource = C_Produtos.editarProduto(prod);
                 button2.Text = "Editar Produto";
                 textBox1.Enabled = false;
                 textBox2.Enabled = false;
@@ -143,6 +164,8 @@ namespace Loja_Unifunec.Views
                 comboBox1.Enabled = false;
                 comboBox2.Enabled = false;
                 dataGridView1.Enabled = true;
+                dataGridView1.Enabled = true;
+                button4.Text = "Excluir Produto";
 
             }
         }
@@ -155,6 +178,11 @@ namespace Loja_Unifunec.Views
             textBox3.Text = row.Cells["VALOR"].Value.ToString();
             comboBox1.Text = row.Cells["MARCA"].Value.ToString();
             comboBox2.Text = row.Cells["TIPO"].Value.ToString();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = C_Produtos.pesquisaRealTime(textBox4.Text);
         }
     }
 }
