@@ -273,6 +273,12 @@
     <Compile Include="Views\Dialogs\DialogExibirProdutos.Designer.cs">
       <DependentUpon>DialogExibirProdutos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dialogs\DialogSelectRelProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Dialogs\DialogSelectRelProd.Designer.cs">
+      <DependentUpon>DialogSelectRelProd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,6 +351,12 @@
     </Compile>
     <Compile Include="Views\Frm_Cidade.Designer.cs">
       <DependentUpon>Frm_Cidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Frm_Compras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Frm_Compras.Designer.cs">
+      <DependentUpon>Frm_Compras.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Frm_Fornecedores.cs">
       <SubType>Form</SubType>
@@ -490,6 +502,12 @@
     <Compile Include="Views\Reports\Frm_Report_Operadora.Designer.cs">
       <DependentUpon>Frm_Report_Operadora.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Produtos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Frm_Report_Produtos.Designer.cs">
+      <DependentUpon>Frm_Report_Produtos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Reports\Frm_Report_Ruas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -544,6 +562,9 @@
     <EmbeddedResource Include="Views\Dialogs\DialogExibirProdutos.resx">
       <DependentUpon>DialogExibirProdutos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dialogs\DialogSelectRelProd.resx">
+      <DependentUpon>DialogSelectRelProd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -571,6 +592,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_Cidade.resx">
       <DependentUpon>Frm_Cidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Frm_Compras.resx">
+      <DependentUpon>Frm_Compras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_Fornecedores.resx">
       <DependentUpon>Frm_Fornecedores.cs</DependentUpon>
@@ -641,6 +665,9 @@
     <EmbeddedResource Include="Views\Reports\Frm_Report_Operadora.resx">
       <DependentUpon>Frm_Report_Operadora.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Frm_Report_Produtos.resx">
+      <DependentUpon>Frm_Report_Produtos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Frm_Report_Ruas.resx">
       <DependentUpon>Frm_Report_Ruas.cs</DependentUpon>
     </EmbeddedResource>
@@ -666,6 +693,7 @@
     <EmbeddedResource Include="Views\Reports\Report_Situacoes.rdlc" />
     <EmbeddedResource Include="Views\Reports\Report_Sexos.rdlc" />
     <EmbeddedResource Include="Views\Reports\Report_Cidades.rdlc" />
+    <EmbeddedResource Include="Views\Reports\Report_Teste.rdlc" />
     <EmbeddedResource Include="Views\Reports\Report_Uf.rdlc" />
     <EmbeddedResource Include="Views\Reports\Report_Trabalhos.rdlc" />
     <EmbeddedResource Include="Views\Reports\Report_Tipos.rdlc" />

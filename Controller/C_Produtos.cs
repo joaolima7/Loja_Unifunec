@@ -20,9 +20,15 @@ namespace Loja_Unifunec.Controller
         static string sqlCarregarProdutos = "select p.codproduto as CÓDIGO, p.nomeproduto as PRODUTO, p.quantidade as ESTOQUE," +
             "p.valor as VALOR, m.nomemarca as MARCA, t.nometipo as TIPO from produto p join marca m on m.codmarca = p.codmarca_fk join tipo t" +
             " on t.codtipo = p.codtipo_fk order by p.codproduto";
-        static string sqlPesquisaRealTime = "select p.codproduto as CÓDIGO, p.nomeproduto as PRODUTO, p.quantidade as ESTOQUE," +
+        static string sqlPesquisaRealTimeProd = "select p.codproduto as CÓDIGO, p.nomeproduto as PRODUTO, p.quantidade as ESTOQUE," +
             "p.valor as VALOR, m.nomemarca as MARCA, t.nometipo as TIPO from produto p join marca m on m.codmarca = p.codmarca_fk join tipo t" +
             " on t.codtipo = p.codtipo_fk where p.nomeproduto like @p1 order by p.codproduto";
+        static string sqlPesquisaRealTimeMarca = "select p.codproduto as CÓDIGO, p.nomeproduto as PRODUTO, p.quantidade as ESTOQUE," +
+            "p.valor as VALOR, m.nomemarca as MARCA, t.nometipo as TIPO from produto p join marca m on m.codmarca = p.codmarca_fk join tipo t" +
+            " on t.codtipo = p.codtipo_fk where m.nomemarca like @p1 order by p.codproduto";
+        static string sqlPesquisaRealTimeTipo = "select p.codproduto as CÓDIGO, p.nomeproduto as PRODUTO, p.quantidade as ESTOQUE," +
+            "p.valor as VALOR, m.nomemarca as MARCA, t.nometipo as TIPO from produto p join marca m on m.codmarca = p.codmarca_fk join tipo t" +
+            " on t.codtipo = p.codtipo_fk where t.nometipo like @p1 order by p.codproduto";
         static string sqlConsultaEstoque = "select quantidade from produto where codproduto = @param";
         static string sqlExcluirProd = "delete from produto where codproduto = @param";
         static string sqlInserirProdutos = "insert into produto(nomeproduto, quantidade, valor, codmarca_fk, codtipo_fk) values(@p1, @p2, @p3, @p4, @p5)";
@@ -236,14 +242,25 @@ namespace Loja_Unifunec.Controller
             return dataTableProdutos;
         }
 
-        public static DataTable pesquisaRealTime(string nomeprod)
+        public static DataTable pesquisaRealTime(string nome, string sql)
         {
+            if (sql == "sqlPesquisaRealTimeProd")
+            {
+                cmd = new SqlCommand(sqlPesquisaRealTimeProd, con);
+            }
+            else if (sql == "sqlPesquisaRealTimeMarca")
+            {
+                cmd = new SqlCommand(sqlPesquisaRealTimeMarca, con);
+            }
+            else if (sql == "sqlPesquisaRealTimeTipo")
+            {
+                cmd = new SqlCommand(sqlPesquisaRealTimeTipo, con);
+            }
             Conexao conexao = new Conexao();
             con = conexao.conectaSQL();
             dataTableProdutos = new DataTable();
 
-            cmd = new SqlCommand(sqlPesquisaRealTime, con);
-            cmd.Parameters.AddWithValue("@p1", "%" + nomeprod + "%");
+            cmd.Parameters.AddWithValue("@p1", "%" + nome + "%");
             cmd.CommandType = CommandType.Text;
 
             con.Open();

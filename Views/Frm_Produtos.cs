@@ -1,5 +1,6 @@
 ﻿using Loja_Unifunec.Controller;
 using Loja_Unifunec.Model;
+using Loja_Unifunec.Views.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -182,7 +183,29 @@ namespace Loja_Unifunec.Views
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = C_Produtos.pesquisaRealTime(textBox4.Text);
+            if (comboBox3.Text == "Produto")
+            {
+                dataGridView1.DataSource = C_Produtos.pesquisaRealTime(textBox4.Text, "sqlPesquisaRealTimeProd");
+            }
+            else if (comboBox3.Text == "Marca")
+            {
+                dataGridView1.DataSource = C_Produtos.pesquisaRealTime(textBox4.Text, "sqlPesquisaRealTimeMarca");
+            }
+            else if (comboBox3.Text == "Tipo")
+            {
+                dataGridView1.DataSource = C_Produtos.pesquisaRealTime(textBox4.Text, "sqlPesquisaRealTimeTipo");
+            }
+            else
+            {
+                MessageBox.Show("Selecione o filtro para pesquisa!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
+                comboBox3.Focus();
+            }
+        }
+
+        private void btn_imprimir_Click(object sender, EventArgs e)
+        {
+            DialogSelectRelProd frm = new DialogSelectRelProd();
+            frm.ShowDialog();
         }
     }
 }
