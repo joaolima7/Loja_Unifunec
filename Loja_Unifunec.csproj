@@ -255,6 +255,12 @@
     <Compile Include="Views\Dialogs\DialogBuscarVendas.Designer.cs">
       <DependentUpon>DialogBuscarVendas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dialogs\DialogCriarCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Dialogs\DialogCriarCompra.Designer.cs">
+      <DependentUpon>DialogCriarCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dialogs\DialogCriarVenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -552,6 +558,9 @@
     </Compile>
     <EmbeddedResource Include="Views\Dialogs\DialogBuscarVendas.resx">
       <DependentUpon>DialogBuscarVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dialogs\DialogCriarCompra.resx">
+      <DependentUpon>DialogCriarCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dialogs\DialogCriarVenda.resx">
       <DependentUpon>DialogCriarVenda.cs</DependentUpon>

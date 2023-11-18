@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Compras));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_imprimir = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_editar_parcelas = new System.Windows.Forms.Button();
+            this.btn_editar_compra = new System.Windows.Forms.Button();
+            this.btn_excluir_compra = new System.Windows.Forms.Button();
+            this.btn_pesq_compra = new System.Windows.Forms.Button();
+            this.btn_inserir_compra = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -48,11 +50,21 @@
             this.lbl_codVenda = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,7 +77,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(0, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1006, 65);
+            this.panel1.Size = new System.Drawing.Size(940, 65);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -75,87 +87,88 @@
             this.panel2.BackColor = System.Drawing.Color.LightGray;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.btn_imprimir);
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btn_editar_parcelas);
+            this.panel2.Controls.Add(this.btn_editar_compra);
+            this.panel2.Controls.Add(this.btn_excluir_compra);
+            this.panel2.Controls.Add(this.btn_pesq_compra);
+            this.panel2.Controls.Add(this.btn_inserir_compra);
             this.panel2.Location = new System.Drawing.Point(0, 668);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1006, 64);
+            this.panel2.Size = new System.Drawing.Size(940, 64);
             this.panel2.TabIndex = 1;
             // 
             // btn_imprimir
             // 
             this.btn_imprimir.Enabled = false;
             this.btn_imprimir.Image = global::Loja_Unifunec.Properties.Resources.imprimir__1_;
-            this.btn_imprimir.Location = new System.Drawing.Point(925, 8);
+            this.btn_imprimir.Location = new System.Drawing.Point(850, 8);
             this.btn_imprimir.Margin = new System.Windows.Forms.Padding(4);
             this.btn_imprimir.Name = "btn_imprimir";
             this.btn_imprimir.Size = new System.Drawing.Size(60, 39);
             this.btn_imprimir.TabIndex = 3;
             this.btn_imprimir.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btn_editar_parcelas
             // 
-            this.button5.Enabled = false;
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(743, 8);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(127, 37);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Excluir Venda";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_editar_parcelas.Enabled = false;
+            this.btn_editar_parcelas.ForeColor = System.Drawing.Color.Black;
+            this.btn_editar_parcelas.Location = new System.Drawing.Point(689, 9);
+            this.btn_editar_parcelas.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_editar_parcelas.Name = "btn_editar_parcelas";
+            this.btn_editar_parcelas.Size = new System.Drawing.Size(127, 37);
+            this.btn_editar_parcelas.TabIndex = 2;
+            this.btn_editar_parcelas.Text = "Editar Parcelas";
+            this.btn_editar_parcelas.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btn_editar_compra
             // 
-            this.button4.Enabled = false;
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(564, 8);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(127, 37);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Editar Venda";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_editar_compra.Enabled = false;
+            this.btn_editar_compra.ForeColor = System.Drawing.Color.Black;
+            this.btn_editar_compra.Location = new System.Drawing.Point(525, 9);
+            this.btn_editar_compra.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_editar_compra.Name = "btn_editar_compra";
+            this.btn_editar_compra.Size = new System.Drawing.Size(127, 37);
+            this.btn_editar_compra.TabIndex = 1;
+            this.btn_editar_compra.Text = "Editar Compra";
+            this.btn_editar_compra.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btn_excluir_compra
             // 
-            this.button3.Enabled = false;
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(378, 8);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(127, 37);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Excluir Produto";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_excluir_compra.Enabled = false;
+            this.btn_excluir_compra.ForeColor = System.Drawing.Color.Black;
+            this.btn_excluir_compra.Location = new System.Drawing.Point(356, 9);
+            this.btn_excluir_compra.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_excluir_compra.Name = "btn_excluir_compra";
+            this.btn_excluir_compra.Size = new System.Drawing.Size(127, 37);
+            this.btn_excluir_compra.TabIndex = 1;
+            this.btn_excluir_compra.Text = "Excluir Compra";
+            this.btn_excluir_compra.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_pesq_compra
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(194, 8);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 37);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Pesquisar Venda";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_pesq_compra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_pesq_compra.ForeColor = System.Drawing.Color.Black;
+            this.btn_pesq_compra.Location = new System.Drawing.Point(188, 9);
+            this.btn_pesq_compra.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_pesq_compra.Name = "btn_pesq_compra";
+            this.btn_pesq_compra.Size = new System.Drawing.Size(127, 37);
+            this.btn_pesq_compra.TabIndex = 1;
+            this.btn_pesq_compra.Text = "Pesquisar Compra";
+            this.btn_pesq_compra.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_inserir_compra
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(16, 7);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 37);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Iniciar Venda";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_inserir_compra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_inserir_compra.ForeColor = System.Drawing.Color.Black;
+            this.btn_inserir_compra.Location = new System.Drawing.Point(18, 8);
+            this.btn_inserir_compra.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_inserir_compra.Name = "btn_inserir_compra";
+            this.btn_inserir_compra.Size = new System.Drawing.Size(127, 37);
+            this.btn_inserir_compra.TabIndex = 0;
+            this.btn_inserir_compra.Text = "Inserir Compra";
+            this.btn_inserir_compra.UseVisualStyleBackColor = true;
+            this.btn_inserir_compra.Click += new System.EventHandler(this.btn_inserir_compra_Click);
             // 
             // textBox1
             // 
@@ -165,7 +178,7 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(398, 22);
+            this.textBox1.Size = new System.Drawing.Size(363, 22);
             this.textBox1.TabIndex = 11;
             // 
             // label2
@@ -184,11 +197,11 @@
             // 
             this.textBox2.BackColor = System.Drawing.Color.White;
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(612, 20);
+            this.textBox2.Location = new System.Drawing.Point(582, 20);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(373, 22);
+            this.textBox2.Size = new System.Drawing.Size(347, 22);
             this.textBox2.TabIndex = 13;
             // 
             // label1
@@ -196,7 +209,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(512, 21);
+            this.label1.Location = new System.Drawing.Point(476, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 18);
@@ -208,7 +221,7 @@
             this.panel4.BackColor = System.Drawing.Color.SteelBlue;
             this.panel4.Controls.Add(this.lbl_dataVenda);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(580, 2);
+            this.panel4.Location = new System.Drawing.Point(551, 2);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(236, 42);
@@ -243,7 +256,7 @@
             this.panel3.BackColor = System.Drawing.Color.SteelBlue;
             this.panel3.Controls.Add(this.lbl_codVenda);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(182, 2);
+            this.panel3.Location = new System.Drawing.Point(153, 2);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(236, 42);
@@ -281,14 +294,118 @@
             this.panel5.Controls.Add(this.panel4);
             this.panel5.Location = new System.Drawing.Point(0, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1006, 52);
+            this.panel5.Size = new System.Drawing.Size(940, 52);
             this.panel5.TabIndex = 16;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 159);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.ShowCellErrors = false;
+            this.dataGridView1.ShowRowErrors = false;
+            this.dataGridView1.Size = new System.Drawing.Size(939, 383);
+            this.dataGridView1.TabIndex = 17;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.LightGray;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.label5);
+            this.panel6.Location = new System.Drawing.Point(1, 546);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(939, 26);
+            this.panel6.TabIndex = 18;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView2.Location = new System.Drawing.Point(1, 577);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView2.MultiSelect = false;
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.ShowCellErrors = false;
+            this.dataGridView2.ShowRowErrors = false;
+            this.dataGridView2.Size = new System.Drawing.Size(939, 86);
+            this.dataGridView2.TabIndex = 19;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(424, 4);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 18);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Parcelas:";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.LightGray;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Controls.Add(this.label6);
+            this.panel7.Location = new System.Drawing.Point(1, 128);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(939, 26);
+            this.panel7.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(416, 2);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 18);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Produtos:";
             // 
             // Frm_Compras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1007, 732);
+            this.ClientSize = new System.Drawing.Size(941, 732);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -297,12 +414,19 @@
             this.Name = "Frm_Compras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compras";
+            this.Load += new System.EventHandler(this.Frm_Compras_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -312,11 +436,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_imprimir;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_editar_parcelas;
+        private System.Windows.Forms.Button btn_editar_compra;
+        private System.Windows.Forms.Button btn_excluir_compra;
+        private System.Windows.Forms.Button btn_pesq_compra;
+        private System.Windows.Forms.Button btn_inserir_compra;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
@@ -328,5 +452,11 @@
         private System.Windows.Forms.Label lbl_codVenda;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label6;
     }
 }
