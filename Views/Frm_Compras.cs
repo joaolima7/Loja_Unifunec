@@ -53,6 +53,11 @@ namespace Loja_Unifunec.Views
             textBox2.Text = compraAtual.Funcionario.Nomefuncionario;
         }
 
+        public void dtProdutosInseridos(DataTable dt)
+        {
+            dataGridView1.DataSource = dt;
+        }
+
 
 
 
@@ -78,6 +83,7 @@ namespace Loja_Unifunec.Views
                 btn_editar_compra.Enabled = true;
                 btn_editar_parcelas.Enabled = true;
                 btn_insere_prods.Enabled = true;
+                btn_imprimir.Enabled = true;
             }
             else if(textBox1.Text == string.Empty)
             {
@@ -85,12 +91,13 @@ namespace Loja_Unifunec.Views
                 btn_editar_compra.Enabled = false;
                 btn_editar_parcelas.Enabled = false;
                 btn_insere_prods.Enabled = false;
+                btn_imprimir.Enabled = false;
             }
         }
 
         private void btn_insere_prods_Click(object sender, EventArgs e)
         {
-            DialogInsereProdutoCOmpra frm = new DialogInsereProdutoCOmpra(compraAtual.Codcompra.ToString());
+            DialogInsereProdutoCOmpra frm = new DialogInsereProdutoCOmpra(compraAtual.Codcompra.ToString(),textBox1.Text,this);
             frm.ShowDialog();
         }
     }

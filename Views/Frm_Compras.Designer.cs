@@ -37,7 +37,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_imprimir = new System.Windows.Forms.Button();
             this.btn_editar_parcelas = new System.Windows.Forms.Button();
             this.btn_editar_compra = new System.Windows.Forms.Button();
             this.btn_excluir_compra = new System.Windows.Forms.Button();
@@ -57,6 +56,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_insere_prods = new System.Windows.Forms.Button();
+            this.btn_imprimir = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -142,17 +142,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(706, 53);
             this.panel2.TabIndex = 1;
-            // 
-            // btn_imprimir
-            // 
-            this.btn_imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_imprimir.Enabled = false;
-            this.btn_imprimir.Image = global::Loja_Unifunec.Properties.Resources.imprimir__1_;
-            this.btn_imprimir.Location = new System.Drawing.Point(638, 7);
-            this.btn_imprimir.Name = "btn_imprimir";
-            this.btn_imprimir.Size = new System.Drawing.Size(45, 32);
-            this.btn_imprimir.TabIndex = 3;
-            this.btn_imprimir.UseVisualStyleBackColor = true;
             // 
             // btn_editar_parcelas
             // 
@@ -399,6 +388,17 @@
             this.btn_insere_prods.Text = "Inserir Produtos";
             this.btn_insere_prods.UseVisualStyleBackColor = true;
             this.btn_insere_prods.Click += new System.EventHandler(this.btn_insere_prods_Click);
+            // 
+            // btn_imprimir
+            // 
+            this.btn_imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_imprimir.Enabled = false;
+            this.btn_imprimir.Image = global::Loja_Unifunec.Properties.Resources.imprimir__1_;
+            this.btn_imprimir.Location = new System.Drawing.Point(638, 7);
+            this.btn_imprimir.Name = "btn_imprimir";
+            this.btn_imprimir.Size = new System.Drawing.Size(45, 32);
+            this.btn_imprimir.TabIndex = 3;
+            this.btn_imprimir.UseVisualStyleBackColor = true;
             // 
             // Frm_Compras
             // 
