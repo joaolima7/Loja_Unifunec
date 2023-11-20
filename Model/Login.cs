@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Loja_Unifunec.Model
 {
-    internal class Login
+    public class Login
     {
         public int Codlogin { get; set; }
         public string Usuario { get; set; }

@@ -14,10 +14,14 @@ namespace Loja_Unifunec.Views
 {
     public partial class Frm_Compras : Form
     {
-        private Compra purchaseCurrent;
-        public Frm_Compras()
+        private Compra compraAtual;
+        private Login login = new Login();
+        public Frm_Compras(string user, string coduser)
         {
             InitializeComponent();
+            login.Usuario = user;
+            login.Codlogin = int.Parse(coduser);
+
         }
 
         //Abaixo são métodos 
@@ -30,12 +34,12 @@ namespace Loja_Unifunec.Views
             lbl_dataVenda.Text = "__/__/____";
         }
 
-        private void purchaseCreated(Compra compra)
+        private void vendaCreated(Compra compra)
         {
-            purchaseCurrent.Codcompra = compra.Codcompra;
-            purchaseCurrent.Datacompra = compra.Datacompra;
-            purchaseCurrent.Funcionario = compra.Funcionario;
-            purchaseCurrent.Fornecedor = compra.Fornecedor;
+            compraAtual.Codcompra = compra.Codcompra;
+            compraAtual.Datacompra = compra.Datacompra;
+            compraAtual.Funcionario = compra.Funcionario;
+            compraAtual.Fornecedor = compra.Fornecedor;
         }
 
 
@@ -51,7 +55,7 @@ namespace Loja_Unifunec.Views
         private void btn_inserir_compra_Click(object sender, EventArgs e)
         {
             clearFields();
-            DialogCriarCompra frm = new DialogCriarCompra();
+            DialogCriarCompra frm = new DialogCriarCompra(this, login);
             frm.ShowDialog();
         }
     }

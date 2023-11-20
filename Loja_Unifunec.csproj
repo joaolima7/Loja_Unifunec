@@ -273,6 +273,12 @@
     <Compile Include="Views\Dialogs\DialogExibirClientes.Designer.cs">
       <DependentUpon>DialogExibirClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dialogs\DialogExibirFonecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Dialogs\DialogExibirFonecedores.Designer.cs">
+      <DependentUpon>DialogExibirFonecedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dialogs\DialogExibirProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -567,6 +573,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dialogs\DialogExibirClientes.resx">
       <DependentUpon>DialogExibirClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dialogs\DialogExibirFonecedores.resx">
+      <DependentUpon>DialogExibirFonecedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dialogs\DialogExibirProdutos.resx">
       <DependentUpon>DialogExibirProdutos.cs</DependentUpon>
