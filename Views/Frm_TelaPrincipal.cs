@@ -18,11 +18,13 @@ namespace Loja_Unifunec.Views
         bool closeForm = false;
         public string usuario;
         public string codfunc;
-        public Frm_TelaPrincipal(string user, string coduser)
+        public string nomefunc;
+        public Frm_TelaPrincipal(string user, string codfunc, string nomefunc)
         {
             InitializeComponent();
             this.usuario = user;
-            this.codfunc = coduser;
+            this.codfunc = codfunc;
+            this.nomefunc = nomefunc;
             label1.Text = usuario;
         }
 
@@ -544,7 +546,7 @@ namespace Loja_Unifunec.Views
             else
             {
                 // O formulário não está aberto, abra-o
-                Frm_Compras novoFormulario = new Frm_Compras(usuario, codfunc);
+                Frm_Compras novoFormulario = new Frm_Compras(usuario, codfunc, nomefunc);
                 novoFormulario.MdiParent = this;
                 novoFormulario.Show();
             }

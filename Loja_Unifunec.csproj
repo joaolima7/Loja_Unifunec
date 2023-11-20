@@ -205,6 +205,7 @@
     <Compile Include="Controller\C_Cep.cs" />
     <Compile Include="Controller\C_Cidade.cs" />
     <Compile Include="Controller\C_Cliente.cs" />
+    <Compile Include="Controller\C_Compra.cs" />
     <Compile Include="Controller\C_ControleLogs.cs" />
     <Compile Include="Controller\C_Fornecedor.cs" />
     <Compile Include="Controller\C_Funcao.cs" />
@@ -284,6 +285,12 @@
     </Compile>
     <Compile Include="Views\Dialogs\DialogExibirProdutos.Designer.cs">
       <DependentUpon>DialogExibirProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\DialogInsereProdutoCOmpra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Dialogs\DialogInsereProdutoCOmpra.Designer.cs">
+      <DependentUpon>DialogInsereProdutoCOmpra.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Dialogs\DialogSelectRelProd.cs">
       <SubType>Form</SubType>
@@ -579,6 +586,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dialogs\DialogExibirProdutos.resx">
       <DependentUpon>DialogExibirProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dialogs\DialogInsereProdutoCOmpra.resx">
+      <DependentUpon>DialogInsereProdutoCOmpra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dialogs\DialogSelectRelProd.resx">
       <DependentUpon>DialogSelectRelProd.cs</DependentUpon>

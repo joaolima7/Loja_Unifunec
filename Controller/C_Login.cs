@@ -19,7 +19,7 @@ namespace Loja_Unifunec.Controller
          static SqlCommand cmd;
          static DataTable dtLogins;
 
-        static string sqlBuscarLogin = "select * from login where usuario = @User and senha = @Password";
+        static string sqlBuscarLogin = "select l.codlogin, l.usuario, l.senha, l.codfuncionario_fk, f.nomefuncionario from login l join funcionario f on f.codfuncionario=l.codfuncionario_fk where usuario = @User and senha = @Password";
         static string sqlExcluirLogin = "delete from login where codlogin = @param";
         static string sqlInserirLogin = "insert into login(usuario, senha, codfuncionario_fk) values(@param, @param2, @param3)";
         static string sqlCarregarLogin = "select l.codlogin as CÓDIGO, l.usuario as USUÁRIO, l.senha as SENHA, f.nomefuncionario as FUNCIONÁRIO from login l join funcionario f on f.codfuncionario=l.codfuncionario_fk order by l.codlogin";
@@ -44,9 +44,10 @@ namespace Loja_Unifunec.Controller
                 {
                     reader.Read();
                     string codfunc = reader["codfuncionario_fk"].ToString();
+                    string nomefunc = reader["nomefuncionario"].ToString();
                     string codlogin = reader["codlogin"].ToString();
                     string nomeuser = reader["usuario"].ToString();
-                    Frm_TelaPrincipal tela = new Frm_TelaPrincipal(nomeuser, codfunc);
+                    Frm_TelaPrincipal tela = new Frm_TelaPrincipal(nomeuser, codfunc, nomefunc);
                     C_ControleLogs.inserirLog(codlogin,"LOGIN NO SISTEMA");
                     reader.Close();
                     tela.Show();

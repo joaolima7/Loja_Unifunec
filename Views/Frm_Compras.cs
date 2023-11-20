@@ -14,13 +14,15 @@ namespace Loja_Unifunec.Views
 {
     public partial class Frm_Compras : Form
     {
-        private Compra compraAtual;
+        private Compra compraAtual = new Compra();
         private Login login = new Login();
-        public Frm_Compras(string user, string coduser)
+        public Frm_Compras(string user, string codfunc, string nomefunc)
         {
             InitializeComponent();
             login.Usuario = user;
-            login.Codlogin = int.Parse(coduser);
+            login.Funcionario = new Funcionario();
+            login.Funcionario.Codfuncionario = int.Parse(codfunc);
+            login.Funcionario.Nomefuncionario = nomefunc;
 
         }
 
@@ -30,16 +32,25 @@ namespace Loja_Unifunec.Views
         {
             textBox1.Text = string.Empty;
             textBox2.Text = string.Empty;
-            lbl_codVenda.Text = "-";
-            lbl_dataVenda.Text = "__/__/____";
+            lbl_codCompra.Text = "-";
+            lbl_dataCompra.Text = "__/__/____";
         }
 
-        private void vendaCreated(Compra compra)
+        public void compraCreated(Compra compra)
         {
             compraAtual.Codcompra = compra.Codcompra;
-            compraAtual.Datacompra = compra.Datacompra;
-            compraAtual.Funcionario = compra.Funcionario;
-            compraAtual.Fornecedor = compra.Fornecedor;
+            compraAtual.Datacompra = DateTime.Now.ToString("dd/MM/yyyy");
+            compraAtual.Funcionario = new Funcionario();
+            compraAtual.Fornecedor = new Fornecedor();
+            compraAtual.Funcionario.Nomefuncionario = login.Funcionario.Nomefuncionario;
+            compraAtual.Funcionario.Codfuncionario = login.Funcionario.Codfuncionario;
+            compraAtual.Fornecedor.Nomefornecedor = compra.Fornecedor.Nomefornecedor;
+            compraAtual.Fornecedor.Codfornecedor = compra.Fornecedor.Codfornecedor;
+
+            lbl_codCompra.Text = compraAtual.Codcompra.ToString();
+            lbl_dataCompra.Text = compraAtual.Datacompra;
+            textBox1.Text = compraAtual.Fornecedor.Nomefornecedor;
+            textBox2.Text = compraAtual.Funcionario.Nomefuncionario;
         }
 
 
@@ -54,8 +65,32 @@ namespace Loja_Unifunec.Views
 
         private void btn_inserir_compra_Click(object sender, EventArgs e)
         {
-            clearFields();
+            //clearFields();
             DialogCriarCompra frm = new DialogCriarCompra(this, login);
+            frm.ShowDialog();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text != null)
+            {
+                btn_excluir_compra.Enabled = true;
+                btn_editar_compra.Enabled = true;
+                btn_editar_parcelas.Enabled = true;
+                btn_insere_prods.Enabled = true;
+            }
+            else if(textBox1.Text == string.Empty)
+            {
+                btn_excluir_compra.Enabled = false;
+                btn_editar_compra.Enabled = false;
+                btn_editar_parcelas.Enabled = false;
+                btn_insere_prods.Enabled = false;
+            }
+        }
+
+        private void btn_insere_prods_Click(object sender, EventArgs e)
+        {
+            DialogInsereProdutoCOmpra frm = new DialogInsereProdutoCOmpra(compraAtual.Codcompra.ToString());
             frm.ShowDialog();
         }
     }

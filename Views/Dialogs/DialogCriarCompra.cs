@@ -1,4 +1,5 @@
-﻿using Loja_Unifunec.Model;
+﻿using Loja_Unifunec.Controller;
+using Loja_Unifunec.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,12 +18,14 @@ namespace Loja_Unifunec.Views.Dialogs
         private Frm_Compras frm_compras;
         private Login login = new Login();
         private Fornecedor forn = new Fornecedor();
+        private Compra compra = new Compra();
 
         public DialogCriarCompra(Frm_Compras compras, Login login)
         {
             InitializeComponent();
             this.frm_compras = compras;
-            this.login.Codlogin = login.Codlogin;
+            this.login.Funcionario = new Funcionario();
+            this.login.Funcionario.Codfuncionario = login.Funcionario.Codfuncionario;
             this.login.Usuario = login.Usuario;
             Txb_nomefunc.Text = login.Usuario;
         }
@@ -54,7 +57,23 @@ namespace Loja_Unifunec.Views.Dialogs
             }
         }
 
-
-       
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (Txb_nomeforn.Text.Length > 0)
+            {
+                int codcompra = C_Compra.criarCompra(forn.Codfornecedor.ToString(), login.Funcionario.Codfuncionario.ToString());
+                compra.Fornecedor = new Fornecedor();
+                compra.Codcompra = codcompra;
+                compra.Fornecedor.Codfornecedor = forn.Codfornecedor;
+                compra.Fornecedor.Nomefornecedor = forn.Nomefornecedor;
+                frm_compras.compraCreated(compra);
+               // fecharForm = true;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Selecione o Fornecedor para prosseguir!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }
